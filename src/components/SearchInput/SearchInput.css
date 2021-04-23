@@ -13,7 +13,8 @@
   width: 482px;
   display: flex;
   align-items: center;
-  background-color: #eee;
+  /* background-color: #eee; */
+  background: #d0dada;
   outline: none;
   /* background-color: #dfe; */
   border: 0;

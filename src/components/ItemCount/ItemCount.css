@@ -1,0 +1,7 @@
+.buttonCont {
+  display: flex;
+  width: 100px;
+  height: 30px;
+  align-items: center;
+  justify-content: space-around;
+}

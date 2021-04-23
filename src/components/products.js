@@ -1,3 +1,22 @@
+import React from "react";
+import "./products.css";
+import { ItemCount } from "./ItemCount/ItemCount";
+
+export const Product = (props) => {
+  const onAdd = () => {
+    alert(`Estas llevando remeras`);
+  };
+  return (
+    <div className="BoxProductos">
+      <h2>{props.title}</h2>
+      <p>{props.precio}</p>
+      <p>{props.description}</p>
+      <ItemCount initial={1} stock={5} onAdd={onAdd} />
+    </div>
+  );
+};
+
+// map recibe cada elemento del arreglo lo pasa a la funcion que esta adentro, el map recibe como parametro una funcion, con cada elemento dentro del arreglo lo recibe como parametro esa funcion
 // export const Products = () => {
 //   <div>
 //     <h2>{products[0].title}</h2>
@@ -7,15 +26,3 @@
 // }; forma 1)
 
 //forma 2)
-export const Product = (props) => {
-  const handleClick = () =>
-    alert(`Compra ${props.title}, porque esta en promo, vence en 10 min`);
-  return (
-    <div onClick={handleClick}>
-      <h2>{props.title}</h2>
-      <p>{props.precio}</p>
-      <p>{props.description}</p>
-    </div>
-  );
-};
-// map recibe cada elemento del arreglo lo pasa a la funcion que esta adentro, el map recibe como parametro una funcion, con cada elemento dentro del arreglo lo recibe como parametro esa funcion
