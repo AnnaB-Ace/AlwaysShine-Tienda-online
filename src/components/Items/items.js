@@ -1,10 +1,10 @@
 import React from "react";
-import "./products.css";
-import { ItemCount } from "./ItemCount/ItemCount";
+import "./items.css";
+import { ItemCount } from "../ItemCount/ItemCount";
 
-export const Product = (props) => {
+export const Items = (props) => {
   const onAdd = () => {
-    alert(`Estas llevando remeras`);
+    alert(`Estas llevando: `);
   };
   return (
     <div className="BoxProductos">

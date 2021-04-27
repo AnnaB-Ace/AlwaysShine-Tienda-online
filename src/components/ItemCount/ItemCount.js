@@ -15,11 +15,11 @@ export const ItemCount = ({ initial, stock, onAdd }) => {
   };
   return (
     <>
-      <button className="buttonCont">
-        <p onClick={decrement}>-</p>
-        <p>{count}</p>
-        <p onClick={increment}>+</p>
-      </button>
+      <div className="buttonCont">
+        <button onClick={decrement}>-</button>
+        <p className="count">{count}</p>
+        <button onClick={increment}>+</button>
+      </div>
       <button
         onClick={() => {
           if (count != 0) {

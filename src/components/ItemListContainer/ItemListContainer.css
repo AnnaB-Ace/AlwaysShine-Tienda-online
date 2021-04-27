@@ -1,15 +1,6 @@
-.Categories {
-  list-style: none;
-  display: flex;
-  background-color: #8fca00;
-  width: 100%;
-  height: 50px;
-  justify-content: center;
-  align-items: center;
-  color: #d0dada;
-  font-weight: bold;
+.ItemListContainer li {
+  padding: 10px;
 }
-
-.Categories li {
-  margin: 0 10px 0 10px;
+.list {
+  padding: 20px;
 }
