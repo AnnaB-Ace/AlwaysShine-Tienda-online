@@ -23,7 +23,7 @@ export const ItemDetail = (props) => {
             <p>
               <small>{props.precio}</small>
             </p>
-            <ItemCount initial={1} stock={5} onAdd={onAdd} />
+            <ItemCount initial={1} stock={5} />
           </div>
         </div>
       </div>
