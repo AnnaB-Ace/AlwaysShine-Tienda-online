@@ -1,7 +1,10 @@
 .topbar {
   display: flex;
   width: 100%;
+  min-width: 30%;
   height: 100px;
+  flex-direction: row;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
   /* background: #333333; */
@@ -29,4 +32,10 @@
 .login-icon {
   width: 30px;
   height: 30px;
+}
+
+@media (max-width: 691px) {
+  .topbar {
+    height: 200px;
+  }
 }

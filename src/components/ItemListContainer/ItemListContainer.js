@@ -4,26 +4,36 @@ import ItemsList from "../ItemsList/ItemsList";
 
 const products = [
   {
-    title: "Remera1",
+    id: 1,
+    imagen: require("../../img/jpg/remera1.jpg").default,
+    title: "Remera Basica unicolor",
     precio: "100",
-    description: "Remeras basicas unicolor1",
+    description: "Remeras basica manga corta unicolor",
   },
   {
-    title: "Remera2",
+    id: 2,
+    imagen: require("../../img/jpg/remera3.jpg").default,
+    title: "Sweater Primavera",
     precio: "200",
-    description: "Remeras basicas unicolor2",
+    description: "Sweater elastizado manga larga con volado al  hombro",
   },
   {
+    id: 3,
+    imagen: require("../../img/jpg/remera3.jpg").default,
     title: "Remera3",
     precio: "300",
     description: "Remeras basicas unicolor3",
   },
   {
+    id: 4,
+    imagen: require("../../img/jpg/remera1.jpg").default,
     title: "Remera4",
     precio: "400",
     description: "Remeras basicas unicolor4",
   },
   {
+    id: 5,
+    imagen: require("../../img/jpg/remera1.jpg").default,
     title: "Remera5",
     precio: "500",
     description: "Remeras basicas unicolor5",

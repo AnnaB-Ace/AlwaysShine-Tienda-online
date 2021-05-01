@@ -16,11 +16,16 @@ export const ItemCount = ({ initial, stock, onAdd }) => {
   return (
     <>
       <div className="buttonCont">
-        <button onClick={decrement}>-</button>
+        <button className="masmenos" onClick={decrement}>
+          -
+        </button>
         <p className="count">{count}</p>
-        <button onClick={increment}>+</button>
+        <button className="masmenos" onClick={increment}>
+          +
+        </button>
       </div>
       <button
+        className="agregar"
         onClick={() => {
           if (count != 0) {
             onAdd();

@@ -1,6 +1,7 @@
 .buttonCont {
   display: flex;
-  width: 100px;
+  width: 120px;
+  margin: 10px;
   height: 30px;
   align-items: center;
   justify-content: center;
@@ -8,7 +9,16 @@
 .count {
   display: block;
   background-color: white;
-  width: 20px;
-  height: 19px;
+  margin: 0;
+  width: 25px;
+  height: 28px;
   text-align: center;
+}
+.agregar {
+  border-radius: 10px;
+  outline: none;
+}
+.masmenos {
+  border-radius: 5px;
+  outline: none;
 }

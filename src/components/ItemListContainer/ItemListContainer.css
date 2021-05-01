@@ -4,3 +4,15 @@
 .list {
   padding: 20px;
 }
+
+.ItemsListContainer {
+  margin-top: 50px;
+  padding: 40px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.borrar {
+  background: #d0dada;
+}
