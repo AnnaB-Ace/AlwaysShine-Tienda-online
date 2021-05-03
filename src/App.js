@@ -3,7 +3,7 @@ import { NavBar } from "./components/navbar/NavBar";
 import { Switch, Route, BrowserRouter } from "react-router-dom";
 import { ItemListContainer } from "./components/ItemListContainer/ItemListContainer";
 import ProductDetail from "./components/ProductDetail/ProductDetail";
-import CategoriesList from "./components/CategoriesList/CategoriesList";
+import { CategoriesList } from "./components/CategoriesList/CategoriesList";
 
 function App() {
   return (
