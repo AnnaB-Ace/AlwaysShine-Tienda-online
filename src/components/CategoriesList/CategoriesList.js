@@ -14,8 +14,7 @@ export const CategoriesList = (props) => {
       );
       const productsC = await response.json();
       console.log(productsC);
-      const { categoria } = productsC;
-      console.log(categoria);
+
       const productosFiltrados = productsC.filter(
         (f) => f.productsC.categoria === "Jeans"
       );
