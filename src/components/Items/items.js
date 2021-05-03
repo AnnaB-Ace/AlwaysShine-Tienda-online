@@ -1,36 +1,31 @@
 import React from "react";
 import "./items.css";
 import { ItemCount } from "../ItemCount/ItemCount";
+import { Link } from "react-router-dom";
+import ProductDetail from "../ProductDetail/ProductDetail";
 
 export const Items = (props) => {
-  console.log(props.imagen);
-  console.log(props);
   const onAdd = () => {
     alert(`Estas llevando: `);
   };
   const imagenSrc = require(`../../img/jpg/${props.imagen}.jpg`).default;
   return (
-    <div className="card-ms-4 tarjeta " style={{ maxWidth: 200 }}>
-      <div className="row">
-        <div className="col-md-6">
+    <div className="tarjeta " style={{ maxWidth: 200 }}>
+      <div>
+        <Link to={`/item/${props.id}`}>
           <img
             src={imagenSrc}
             alt="coleccion2021"
             className="card-img img-fluid"
           />
-        </div>
-        <div className="cold-md-6">
-          <div className="card-body">
-            <h5>{props.title}</h5>
-            <p className="card-text">
-              <small>{props.description}</small>
-            </p>
-            <p>
-              <small>{props.precio}</small>
-            </p>
-            <ItemCount initial={1} stock={5} onAdd={onAdd} />
-          </div>
-        </div>
+        </Link>
+      </div>
+      <div className="Box">
+        <h5>{props.title}</h5>
+
+        <p>
+          <small>${props.precio}</small>
+        </p>
       </div>
     </div>
   );
@@ -55,4 +50,42 @@ export const Items = (props) => {
       <p>{props.description}</p>
       <ItemCount initial={1} stock={5} onAdd={onAdd} />
     </div> */
+}
+{
+  /* <div className="cold-md-6">
+  <div className="card-body">
+    <h5>{props.title}</h5>
+    <p className="card-text">
+      <small>{props.description}</small>
+    </p>
+    <p>
+      <small>{props.precio}</small>
+    </p>
+    <ItemCount initial={1} stock={5} onAdd={onAdd} />
+  </div>
+</div>; */
+}
+{
+  /* <div className="card-ms-4 tarjeta " style={{ maxWidth: 200 }}>
+  <div className="row">
+    <div className="col-md-6">
+      <Link to={`/item/${props.id}`}>
+        <img
+          src={imagenSrc}
+          alt="coleccion2021"
+          className="card-img img-fluid"
+        />
+      </Link>
+    </div>
+    <div className="cold-md-6">
+      <div className="card-body">
+        <h5>{props.title}</h5>
+
+        <p>
+          <small>{props.precio}</small>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>; */
 }

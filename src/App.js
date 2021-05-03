@@ -1,19 +1,20 @@
 import "./App.css";
 import { NavBar } from "./components/navbar/NavBar";
-// import { ItemListContainer } from "./components/ItemListContainer/ItemListContainer";
-import { ItemDetailContainer } from "./components/ItemDetailContainer/ItemDetailContainer";
-import { Categories } from "./components/Categories/Categories";
+import { Switch, Route, BrowserRouter } from "react-router-dom";
+import { ItemListContainer } from "./components/ItemListContainer/ItemListContainer";
+import ProductDetail from "./components/ProductDetail/ProductDetail";
+import CategoriesList from "./components/CategoriesList/CategoriesList";
 
 function App() {
   return (
-    <div className="App">
+    <BrowserRouter>
       <NavBar />
-      <Categories />
-
-      <div className="borrar">
-        <ItemDetailContainer />
-      </div>
-    </div>
+      <Switch>
+        <Route exact path="/" component={ItemListContainer} />
+        <Route exact path="/category/:categoria" component={CategoriesList} />
+        <Route exact path="/item/:id" component={ProductDetail} />
+      </Switch>
+    </BrowserRouter>
   );
 }
 

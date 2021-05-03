@@ -1,18 +1,10 @@
-.ItemListContainer li {
-  padding: 10px;
-}
-.list {
-  padding: 20px;
-}
-
 .ItemsListContainer {
-  margin-top: 50px;
-  padding: 40px;
+  width: 80%;
+  margin: auto;
+  margin-top: 70px;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: space-around;
-}
-.borrar {
-  background: #d0dada;
+  justify-content: center;
+  align-items: center;
 }
