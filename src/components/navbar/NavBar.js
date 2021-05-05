@@ -11,14 +11,10 @@ export const NavBar = () => {
         <nav className="navigation">
           <ul className="links">
             <li className="link">
-              <a href="#">
-                <LoginPerson />
-              </a>
+              <LoginPerson />
             </li>
             <li className="link">
-              <a href="#">
-                <CartWidget />
-              </a>
+              <CartWidget />
             </li>
           </ul>
         </nav>
