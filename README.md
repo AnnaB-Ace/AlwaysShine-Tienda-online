@@ -2,6 +2,12 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Bienvenido al Repositorio oficial de Tienda Argentina
+
+Tienda mi argentina es una pagina web, ecommerce de ropa para mujer, desarollada con el fin de aplicar los conocimientos adquiridos hasta hoy en el curso de Coderhouse. El objetivo principal de mi aplicacion es aprender React
+
+Esta web esta dividida entre componentes: mostrando una pagina principal el menu de navegacion, el listado de productos, y una lista de categorias, donde se podra navegar entre sus distintas categorias por medio de route
+
 ## Available Scripts
 
 In the project directory, you can run:

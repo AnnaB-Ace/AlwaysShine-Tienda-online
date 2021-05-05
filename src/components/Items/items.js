@@ -1,8 +1,6 @@
 import React from "react";
 import "./items.css";
-import { ItemCount } from "../ItemCount/ItemCount";
 import { Link } from "react-router-dom";
-import ProductDetail from "../ProductDetail/ProductDetail";
 
 export const Items = (props) => {
   const onAdd = () => {

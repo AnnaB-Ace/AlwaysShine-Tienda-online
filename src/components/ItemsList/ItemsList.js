@@ -8,6 +8,7 @@ const ItemsList = (props) => {
     <Items
       key={i}
       id={product.id}
+      categoria={product.categoria}
       imagen={product.imagen}
       title={product.title}
       precio={product.precio}

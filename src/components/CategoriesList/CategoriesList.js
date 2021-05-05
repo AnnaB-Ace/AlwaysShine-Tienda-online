@@ -1,33 +1,51 @@
 import React, { useEffect, useState } from "react";
-// import { products } from "../ItemListContainer/ItemListContainer";
 import { useParams } from "react-router";
+import { Link } from "react-router-dom";
+import "./CategoriesList.css";
 
-export const CategoriesList = (props) => {
-  const { categoria } = useParams();
-
-  // aca debo usar el id dinamico
+export const CategoriesList = () => {
+  const { categoriaid } = useParams();
   const [productscategory, setproductscategory] = useState([]);
+
   useEffect(() => {
     const getItems = async () => {
       const response = await fetch(
         `https://run.mocky.io/v3/0f139187-be0b-4d67-8f4c-dd461bd8519e`
       );
-      const productsC = await response.json();
-      console.log(productsC);
+      let productsC = await response.json();
 
-      const productosFiltrados = productsC.filter(
-        (f) => f.productsC.categoria === "Jeans"
+      let productosFiltrados = productsC.filter(
+        (f) => f.categoria.toLowerCase() === categoriaid.toLowerCase()
       );
-      console.log(productosFiltrados);
+
       setproductscategory(productosFiltrados);
     };
     getItems();
-  }, [productscategory]);
+  }, [categoriaid]);
 
   return (
-    <div>
-      {productscategory.map((product) => {
-        return <li key={product}>{product.title}</li>;
+    <div className="CategoriesList">
+      {productscategory.map((product, id) => {
+        return (
+          <div key={product.id} className="tarjeta " style={{ maxWidth: 200 }}>
+            <div>
+              <Link to={`/item/${product.id}`}>
+                <img
+                  src={require(`../../img/jpg/${product.imagen}.jpg`).default}
+                  alt="coleccion2021"
+                  className="card-img img-fluid"
+                />
+              </Link>
+            </div>
+            <div className="Box">
+              <h5>{product.title}</h5>
+
+              <p>
+                <small>${product.precio}</small>
+              </p>
+            </div>
+          </div>
+        );
       })}
     </div>
   );

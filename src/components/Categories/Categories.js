@@ -1,20 +1,26 @@
-// import React, { useState } from "react";
-// import "./Categories.css";
+import React, { useState } from "react";
+import { NavLink } from "react-router-dom";
+import "./Categories.css";
 
-// export const Categories = () => {
-//   const [categories, setcategories] = useState([
-//     "Remeras",
-//     "Sweater",
-//     "Jeans",
-//     "Camisas",
-//     "Short/Pollera",
-//     "Zapatillas",
-//   ]);
-//   return (
-//     <div className="Categories">
-//       {categories.map((caterory) => {
-//         return <li key={caterory}>{caterory}</li>;
-//       })}
-//     </div>
-//   );
-// };
+export const Categories = () => {
+  const [categories, setcategories] = useState([
+    "Abrigo",
+    "Sweater",
+    "Pollera",
+    "Jeans",
+    "Vestido",
+  ]);
+  return (
+    <div className="Categories">
+      {categories.map((category) => {
+        return (
+          <li key={category}>
+            <NavLink className="Lista" to={`/category/${category}`}>
+              {category}
+            </NavLink>
+          </li>
+        );
+      })}
+    </div>
+  );
+};

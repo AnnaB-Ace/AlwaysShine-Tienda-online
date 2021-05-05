@@ -1,14 +1,16 @@
 import React, { useEffect, useState } from "react";
+import { useParams } from "react-router";
 import { ItemCount } from "../ItemCount/ItemCount";
-import "./ProductDetail.css";
+import "./ItemDetailContainer.css";
 
-function ProductDetail(props) {
-  const id = props.match.params.id;
+function ItemDetailContainer(props) {
+  // const id = props.match.params.id;
+  const { id } = useParams();
   const [productDetail, setProductDetail] = useState(null);
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    const getProductDetail = async () => {
+    const getItems = async () => {
       setLoading(true);
       const response = await fetch(
         `https://run.mocky.io/v3/0f139187-be0b-4d67-8f4c-dd461bd8519e`
@@ -18,7 +20,7 @@ function ProductDetail(props) {
       setLoading(false);
       setProductDetail(currentProduct);
     };
-    getProductDetail();
+    getItems();
   }, [id]);
 
   if (loading) {
@@ -51,24 +53,4 @@ function ProductDetail(props) {
   ) : null;
 }
 
-export default ProductDetail;
-//     <div className="Contenedor">
-//       <div>
-//         <img src={require(`../../img/jpg/${props.imagen}.jpg`).default} />
-//       </div>
-//       <div>{productDetail.title}</div>
-//       <div>{productDetail.description}</div>
-//     </div>
-//   ) : null;
-// }
-
-{
-  /* <img
-  src={
-    productDetail.imagen
-      ? require(`../../img/jpg/${productDetail.imagen}.jpg`).default
-      : ""
-  }
-/>; */
-}
-//  `https://run.mocky.io/v3/0356bcb7-af65-4b19-b087-2af97d7e61ae`;
+export default ItemDetailContainer;
