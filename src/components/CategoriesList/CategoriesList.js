@@ -2,9 +2,14 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import { Link } from "react-router-dom";
 import "./CategoriesList.css";
+// import { useCartContext } from "../../context/cartContext";
 
 export const CategoriesList = () => {
   const { categoriaid } = useParams();
+  // const cartC = useCartContext();
+  // console.log("card=>", cartC);
+
+  // console.log(cartC.id);
   const [productscategory, setproductscategory] = useState([]);
 
   useEffect(() => {

@@ -2,8 +2,10 @@ import "./NavBar.css";
 import { CartWidget } from "../CartWidget/CartWidget";
 import { LoginPerson } from "../LoginPerson/LoginPerson";
 import { Categories } from "../Categories/Categories";
+import { Link } from "react-router-dom";
+// import PropTypes from "prop-types";
 
-export const NavBar = () => {
+export const NavBar = ({ itemsQuantity = 0 }) => {
   return (
     <div>
       <header className="topbar">
@@ -13,9 +15,9 @@ export const NavBar = () => {
             <li className="link">
               <LoginPerson />
             </li>
-            <li className="link">
-              <CartWidget />
-            </li>
+            <Link className="link" to={"/cart"}>
+              <CartWidget />({itemsQuantity}) Cart
+            </Link>
           </ul>
         </nav>
       </header>
@@ -23,3 +25,6 @@ export const NavBar = () => {
     </div>
   );
 };
+// NavBar.propTypes = {
+//   itemsQuantity: PropTypes.number.isRequired,
+// };

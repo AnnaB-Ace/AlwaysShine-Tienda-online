@@ -10,6 +10,7 @@ export const Categories = () => {
     "Jeans",
     "Vestido",
   ]);
+
   return (
     <div className="Categories">
       {categories.map((category) => {

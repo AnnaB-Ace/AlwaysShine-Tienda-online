@@ -1,14 +1,13 @@
 import React from "react";
 import ReactDOM from "react-dom";
-// import "./index.css";
-// import { getPlants } from "./Promesas";
-// import Promesas from "./Promesas";
-
 import App from "./App";
+import CartContextProvider from "./context/cartContext";
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <CartContextProvider>
+      <App />
+    </CartContextProvider>
   </React.StrictMode>,
   document.getElementById("root")
 );
