@@ -9,3 +9,5 @@ export const ButtonAgregar = ({ count, onAdd }) => {
     </div>
   ) : null;
 };
+
+// const onAdd = (item, count) => {};

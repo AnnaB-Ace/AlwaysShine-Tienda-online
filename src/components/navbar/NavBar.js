@@ -3,9 +3,17 @@ import { CartWidget } from "../CartWidget/CartWidget";
 import { LoginPerson } from "../LoginPerson/LoginPerson";
 import { Categories } from "../Categories/Categories";
 import { Link } from "react-router-dom";
+import { useCartContext } from "../../context/cartContext";
+
 // import PropTypes from "prop-types";
 
-export const NavBar = ({ itemsQuantity = 0 }) => {
+export const NavBar = () => {
+  // para el navbar me intereza la cantidad por lo tanto la tengo que guardar en un estado
+
+  const { quantity } = useCartContext();
+
+  console.log(`Hemos guardado la cantidad: ${quantity} `);
+
   return (
     <div>
       <header className="topbar">
@@ -16,7 +24,7 @@ export const NavBar = ({ itemsQuantity = 0 }) => {
               <LoginPerson />
             </li>
             <Link className="link" to={"/cart"}>
-              <CartWidget />({itemsQuantity}) Cart
+              <CartWidget />({quantity}) Cart
             </Link>
           </ul>
         </nav>

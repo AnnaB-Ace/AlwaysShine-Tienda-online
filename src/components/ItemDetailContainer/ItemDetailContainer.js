@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router";
-// import { ItemCount } from "../ItemCount/ItemCount";
 import ItemDetail from "../ItemDetail/ItemDetail";
 import { products } from "../ItemListContainer/ItemListContainer";
 
@@ -10,6 +9,7 @@ function ItemDetailContainer(props) {
   const { id } = useParams();
 
   const [item, setItem] = useState([null]);
+
   const [loading, setLoading] = useState(false);
   const currentProduct = products.find((p) => p.id === Number(id));
   useEffect(() => {

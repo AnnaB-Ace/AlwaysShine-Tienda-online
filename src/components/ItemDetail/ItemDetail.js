@@ -1,12 +1,20 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { useCartContext } from "../../context/cartContext";
 import { ItemCount } from "../ItemCount/ItemCount";
 
 const ItemDetail = ({ item }) => {
   const [showButton, setShowButton] = useState(0);
+  const { addToCart } = useCartContext();
+  const { removeFromCart } = useCartContext();
+
   const onAdd = (quantityToAdd) => {
     setShowButton(quantityToAdd);
-    console.log("Hemos recibido un evento del ItemCount ", quantityToAdd);
+    addToCart(item);
+    console.log(
+      "Hemos recibido un evento del ItemCount, la cantidad seleccionada es ",
+      quantityToAdd
+    );
   };
 
   return (
@@ -29,12 +37,19 @@ const ItemDetail = ({ item }) => {
           <div className="title">${item.precio}</div>
           <div className="description">{item.description}</div>
           {showButton === 0 ? (
-            <ItemCount initial={1} stock={5} onAdd={onAdd} />
+            <ItemCount initial={1} stock={5} onAdd={onAdd} item={item} />
           ) : (
             <Link to={"/cart"}>
               <button>Terminar compra</button>
             </Link>
           )}
+          <button
+            onClick={() => {
+              removeFromCart(item.id);
+            }}
+          >
+            remover
+          </button>
         </div>
       </div>
     </div>
