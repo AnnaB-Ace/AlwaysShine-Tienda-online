@@ -19,3 +19,9 @@
   font-size: 18px;
   letter-spacing: 0.15rem;
 }
+
+@media (max-width: 258px) {
+  .Categories {
+    height: 170px;
+  }
+}

@@ -1,0 +1,21 @@
+.Propiedades {
+  width: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.row {
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+@media (max-width: 984px) {
+  .Propiedades {
+    width: 100% !important;
+    padding: 20px;
+  }
+  .card {
+    margin: auto;
+  }
+}

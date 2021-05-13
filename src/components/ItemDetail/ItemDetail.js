@@ -2,25 +2,35 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { useCartContext } from "../../context/cartContext";
 import { ItemCount } from "../ItemCount/ItemCount";
+import "./ItemDetail.css";
 
 const ItemDetail = ({ item }) => {
   const [showButton, setShowButton] = useState(0);
   const { addToCart } = useCartContext();
   const { removeFromCart } = useCartContext();
+  const { cart } = useCartContext();
 
   const onAdd = (quantityToAdd) => {
     setShowButton(quantityToAdd);
-    addToCart(item);
-    console.log(
-      "Hemos recibido un evento del ItemCount, la cantidad seleccionada es ",
-      quantityToAdd
-    );
+    addToCart(item, quantityToAdd);
+
+    // if (item) {
+    //   revisar(item);
+    // } else {
+
+    // }
+
+    // console.log(
+    //   "Hemos recibido un evento del ItemCount, la cantidad seleccionada es ",
+    //   quantityToAdd
+    // );
   };
 
   return (
-    <div className="Container-fluid">
+    <div className="container-fluid">
       <div className="row">
-        <div className="col-lg-6 col-xs-12 imagen card">
+        <div className="col-lg-2 col-xs-12"></div>
+        <div className="col-lg-4 col-xs-12 imagen card">
           <img
             className="img-fluid"
             src={
@@ -32,7 +42,7 @@ const ItemDetail = ({ item }) => {
           />
         </div>
 
-        <div className="col-lg-6 col-xs-12 Propiedades">
+        <div className="col-lg-4 col-xs-12 Propiedades">
           <div className="title">{item.title}</div>
           <div className="title">${item.precio}</div>
           <div className="description">{item.description}</div>
@@ -51,6 +61,7 @@ const ItemDetail = ({ item }) => {
             remover
           </button>
         </div>
+        <div className="col-lg-2 col-xs-12 "></div>
       </div>
     </div>
   );

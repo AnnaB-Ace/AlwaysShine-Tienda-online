@@ -11,19 +11,39 @@ export const useCartContext = () => {
 export const CartContextProvider = ({ children }) => {
   const [cart, setCart] = useState([]); // ACA ESTAVACIO
   const [quantity, setQuantity] = useState(0);
+  // const [totalCart, setstateCart] = useState(0);
 
-  const addToCart = (item) => {
-    setCart([...cart, item]);
+  // const revisar = (itemId) => {
+  //   cart.includes(itemId.id);
+  //   return alert("Items ya esta existe");
+  // };
+
+  const addToCart = (item, quantityToAdd) => {
+    // item.quantity = quantity;
+    if (!cart.includes(item)) {
+      setCart([...cart, item]);
+      return cart.filter((item) => item.id === item);
+    } else {
+      alert(
+        "Este elemento ya fue seleccionado anteriormente, no puede volverlo a seleccionar, vaya al carro de compras y modifican su cantidad"
+      );
+    }
   };
+
   const removeFromCart = (itemId) => {
     const NewCartWhithItemRemove = cart.filter((item) => item.id !== itemId);
     setCart(NewCartWhithItemRemove);
   };
+  // const reducer = (itemId) => {
+  //   const numeroUnidadesItemRepetidas = cart.reduce((total, itemId) => {
+  //     return itemId === cart.id ? (total += 1) : total;
+  //   }, 0);
+  // };
+
   useEffect(() => {
     setQuantity(cart.length);
   }, [cart]);
-  console.log(cart, quantity);
-
+  console.log(cart);
   return (
     <CartContext.Provider value={{ cart, quantity, addToCart, removeFromCart }}>
       {children}
