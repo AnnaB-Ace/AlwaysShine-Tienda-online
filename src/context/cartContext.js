@@ -16,7 +16,7 @@ export const CartContextProvider = ({ children }) => {
       setCart([...cart, item]);
       console.log(`Añadimos: ${quantityToAdd} unidades`);
 
-      return cart.filter((item) => item.id === item);
+      // return cart.filter((item) => item.id === item);
     } else {
       alert(
         "Este elemento ya fue seleccionado anteriormente, no puede volverlo a seleccionar, vaya al carro de compras y modifican su cantidad"
