@@ -12,7 +12,7 @@ export const NavBar = () => {
 
   const { quantity } = useCartContext();
 
-  console.log(`Hemos guardado la cantidad: ${quantity} `);
+  // console.log(`Hemos guardado la cantidad: ${quantity} `);
 
   return (
     <div>

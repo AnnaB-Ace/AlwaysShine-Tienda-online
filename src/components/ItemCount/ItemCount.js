@@ -16,13 +16,13 @@ export const ItemCount = ({ initial, stock, onAdd }) => {
     }
   };
 
-  useEffect(() => {
-    console.log("componente montado");
+  // useEffect(() => {
+  //   console.log("componente montado");
 
-    return () => {
-      console.log("componente desmontado");
-    };
-  }, []);
+  //   return () => {
+  //     console.log("componente desmontado");
+  //   };
+  // }, []);
   return (
     <div className="buttonCont">
       <button className="masmenos" onClick={decrement}>

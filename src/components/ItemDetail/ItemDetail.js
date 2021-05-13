@@ -8,22 +8,10 @@ const ItemDetail = ({ item }) => {
   const [showButton, setShowButton] = useState(0);
   const { addToCart } = useCartContext();
   const { removeFromCart } = useCartContext();
-  const { cart } = useCartContext();
 
   const onAdd = (quantityToAdd) => {
     setShowButton(quantityToAdd);
     addToCart(item, quantityToAdd);
-
-    // if (item) {
-    //   revisar(item);
-    // } else {
-
-    // }
-
-    // console.log(
-    //   "Hemos recibido un evento del ItemCount, la cantidad seleccionada es ",
-    //   quantityToAdd
-    // );
   };
 
   return (

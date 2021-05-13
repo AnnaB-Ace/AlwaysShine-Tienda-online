@@ -3,25 +3,19 @@ import React, { createContext, useContext, useEffect, useState } from "react";
 export const CartContext = createContext([]);
 export const useCartContext = () => {
   // customHook
-  return useContext(CartContext); // con esta funcion lo puedo usar en mis children
+  return useContext(CartContext);
 };
 
-//COMIENZO COMPONENTE
 // contex Provider
 export const CartContextProvider = ({ children }) => {
   const [cart, setCart] = useState([]); // ACA ESTAVACIO
   const [quantity, setQuantity] = useState(0);
-  // const [totalCart, setstateCart] = useState(0);
-
-  // const revisar = (itemId) => {
-  //   cart.includes(itemId.id);
-  //   return alert("Items ya esta existe");
-  // };
 
   const addToCart = (item, quantityToAdd) => {
-    // item.quantity = quantity;
     if (!cart.includes(item)) {
       setCart([...cart, item]);
+      console.log(`Añadimos: ${quantityToAdd} unidades`);
+
       return cart.filter((item) => item.id === item);
     } else {
       alert(
@@ -34,11 +28,6 @@ export const CartContextProvider = ({ children }) => {
     const NewCartWhithItemRemove = cart.filter((item) => item.id !== itemId);
     setCart(NewCartWhithItemRemove);
   };
-  // const reducer = (itemId) => {
-  //   const numeroUnidadesItemRepetidas = cart.reduce((total, itemId) => {
-  //     return itemId === cart.id ? (total += 1) : total;
-  //   }, 0);
-  // };
 
   useEffect(() => {
     setQuantity(cart.length);
@@ -51,6 +40,7 @@ export const CartContextProvider = ({ children }) => {
   );
 };
 export default CartContextProvider;
+
 //FIN DE COMPONENTE
 
 // export const useCartContext = () => {
