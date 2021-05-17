@@ -3,30 +3,28 @@ import { useCartContext } from "../../context/cartContext";
 import "./cart.css";
 
 const Cart = () => {
-  const { cart } = useCartContext();
+  const { cart, quantityToAdd } = useCartContext();
 
   return (
     <div>
       <div className="detalle">
         <h1>Aqui va el Cart</h1>
-        <div>
+        <div className="tabla">
           <p>Producto</p>
           <p>Precio unitario</p>
           <p>Cantidad</p>
           <p>Precio Total</p>
         </div>
-        <div>
-          <p>Producto</p>
-          <p>Precio unitario</p>
-          <p>Cantidad</p>
-          <p>Precio Total</p>
+        <div className="tabladetalle">
+          {cart.map((carro, id) => (
+            <div className="description" key={carro.id}>
+              <p>{carro.title}</p>
+              <p>{carro.precio}</p>
+              <p>{"cantidad"}</p>
+              <p>{"precio"}</p>
+            </div>
+          ))}
         </div>
-      </div>
-      <div className="resumen"> Resumen de la compra</div>
-      <div className="contenedor">
-        {cart.map((carro, id) => (
-          <p key={carro.id}>{carro.title}</p>
-        ))}
       </div>
     </div>
   );

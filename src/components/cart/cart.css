@@ -3,3 +3,18 @@
   height: 300px;
   border: solid red;
 }
+.tabla {
+  display: flex;
+  justify-content: space-evenly;
+  border: solid gray;
+}
+.tabladetalle {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  border: solid gray;
+}
+.description {
+  display: flex;
+  justify-content: space-evenly;
+}

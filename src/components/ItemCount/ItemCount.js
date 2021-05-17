@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { ButtonAgregar } from "../ButtonAgregar/ButtonAgregar";
 import "./ItemCount.css";
 
