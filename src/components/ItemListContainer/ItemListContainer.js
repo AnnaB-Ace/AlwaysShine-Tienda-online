@@ -9,7 +9,7 @@ export const products = [
     imagen: "Abrigo1R",
     imagenExpandida: "Abrigo1",
     title: "Campera de nylon impermeable",
-    precio: "5600",
+    precio: 5600,
     description:
       "Campera de nylon impermeable con un sutil brillo en la tela. Rellena con guata y forrada al tono. Detalles marcarios, multiples bolsillos y capucha desmontable. Super canchera y abrigada. Ideal para toda ocasión de uso.",
   },
@@ -19,7 +19,7 @@ export const products = [
     imagen: "Vestido1R",
     imagenExpandida: "Vestido1",
     title: "Vestido de calce con volado",
-    precio: "3100",
+    precio: 3100,
     description:
       "Vestido de calce amplio manga 3/4 con puños. Detalle de 3 volados fruncidos en delantero y espalda. Tejido creppe de viscosa estampa exclusiva de Portsaid.",
   },
@@ -29,7 +29,7 @@ export const products = [
     imagen: "Sweater1R",
     imagenExpandida: "Sweater1",
     title: "Sweater de lana",
-    precio: "3200",
+    precio: 3200,
     description:
       "Jersey de punto suave con cuello redondo, manga larga, color mostaza.",
   },
@@ -39,7 +39,7 @@ export const products = [
     imagen: "Pollera1R",
     imagenExpandida: "Pollera1",
     title: "Pollera tiro alto",
-    precio: "2500",
+    precio: 2500,
     description:
       "Pollera de vegan leather tiro alto con recorte en bajo que forma un volado con piedritas plateadas en el final de la misma. Lleva un cierre en el lateral para su acceso.",
   },
@@ -49,7 +49,7 @@ export const products = [
     imagen: "Jeans1R",
     imagenExpandida: "Jeans1",
     title: "Jeans Basic",
-    precio: "4800",
+    precio: 4800,
     description:
       "tura alta, bragueta con cremallera con botón y perneras ligeramente cónicas.",
   },
@@ -59,7 +59,7 @@ export const products = [
     imagen: "Abrigo2R",
     imagenExpandida: "Abrigo2",
     title: "Campera tipo parka",
-    precio: "5400",
+    precio: 5400,
     description:
       "Campera tipo parka, de calce recto, con jareta para ajustar en cintura. Bolsillos cargo. Piel de la capucha desmontable. Tela rasada e interior con piel y parte matelaseada, a contratono.",
   },
@@ -69,7 +69,7 @@ export const products = [
     imagen: "Sweater2R",
     imagenExpandida: "Sweater2",
     title: "Sweater Primavera",
-    precio: "2600",
+    precio: 2600,
     description:
       "Jersey de punto suave con cuello redondo, manga larga y ribete de canalé.",
   },
@@ -79,7 +79,7 @@ export const products = [
     imagen: "Vestido2R",
     imagenExpandida: "Vestido2",
     title: "Vestido estampa cuadros",
-    precio: "3400",
+    precio: 3400,
     description:
       "Vestido corto estampado de viscosa con escote de pico y costura bajo el busto. Modelo con mangas abullonadas cortas con elástico y ribete de volante, tiras cosidas en la parte posterior de la cintura y cremallera oculta detrás. Sin forrar.",
   },
@@ -89,7 +89,7 @@ export const products = [
     imagen: "Jeans2R",
     imagenExpandida: "Jeans2",
     title: "Jeans Relax",
-    precio: "4800",
+    precio: 4800,
     description:
       "Vaqueros de 5 bolsillos ligeramente más holgados en denim elástico lavado. Cintura extra alta, bragueta con botones y perneras estrechas hasta los tobillos. El contenido de algodón se recicla parcialmente.",
   },
@@ -99,7 +99,7 @@ export const products = [
     imagen: "Abrigo3R",
     imagenExpandida: "Abrigo3",
     title: "Campera Liveana",
-    precio: "6300",
+    precio: 6300,
     description:
       "Campera de largo modular por debajo de la cadera. Con cuello alto y capucha. Matelaseado de bastones de 6 cm. Forrería a contratono. Es una prenda ultra liviana, con relleno de vellón siliconado.Trae una riñorera para su guardado.",
   },
@@ -109,7 +109,7 @@ export const products = [
     imagen: "Sweater3R",
     imagenExpandida: "Sweater3",
     title: "Cardigan Basico texturado",
-    precio: "3100",
+    precio: 3100,
     description:
       "Cárdigan basico, suave de canalé con contenido de lana. Escote en v. ",
   },
@@ -119,7 +119,7 @@ export const products = [
     imagen: "Vestido3R",
     imagenExpandida: "Vestido3",
     title: "Vestido largo volado",
-    precio: "3600",
+    precio: 3600,
     description:
       "Vestido fluido de cupro combinado con gasa creppe en espalda. Escote tipo halter con volados, tajos en laterales y abertura en espalda.",
   },
@@ -129,7 +129,7 @@ export const products = [
     imagen: "Abrigo4R",
     imagenExpandida: "Abrigo4",
     title: "Blazer Ligero",
-    precio: "3000",
+    precio: 3000,
     description: "Blazer largo ligero lila",
   },
   {
@@ -138,7 +138,7 @@ export const products = [
     imagen: "Sweater4R",
     imagenExpandida: "Sweater4",
     title: "Cardigan suave de canalé",
-    precio: "2500",
+    precio: 2500,
     description:
       "Cárdigan suave de canalé con contenido de lana. Escote de pico, botones en la parte delantera y bolsillos delanteros. Hombros caídos, manga larga y puños y bajo de canalé estrecho. El contenido de poliéster se recicla.",
   },
@@ -148,7 +148,7 @@ export const products = [
     imagen: "Vestido4R",
     imagenExpandida: "Vestido4",
     title: "Vestido Suelto",
-    precio: "3300",
+    precio: 3300,
     description: "Vestido de tencel sostenible de fit holgado con estocte v.",
   },
   {
@@ -157,7 +157,7 @@ export const products = [
     imagen: "Abrigo5R",
     imagenExpandida: "Abrigo5",
     title: "Campera holgada",
-    precio: "5100",
+    precio: 5100,
     description:
       "Campera de largo modular por encima de la rodilla. Calce holgado. Con capucha. bolsillos cargo. El interior es de piel muy suave y confortable y exterior con mano peach. Prenda super liviana.",
   },
@@ -167,7 +167,7 @@ export const products = [
     imagen: "Vestido5R",
     imagenExpandida: "Vestido5",
     title: "Vestido Suelto",
-    precio: "3800",
+    precio: 3800,
     description:
       "Vestido oversize con manga corta y escote redondo, jersey de algodón",
   },
@@ -177,7 +177,7 @@ export const products = [
     imagen: "Abrigo6R",
     imagenExpandida: "Abrigo6",
     title: "Tapado de paño",
-    precio: "7300",
+    precio: 7300,
     description: "Tapado de paño largo, con boton grande al centro.",
   },
   {
@@ -186,7 +186,7 @@ export const products = [
     imagen: "Vestido6R",
     imagenExpandida: "Vestido6",
     title: "Vestido Piedras",
-    precio: "4000",
+    precio: 4000,
     description:
       "Vestido de calce recto manga 3/4. Detalle de piedras engarzadas en puños. Tejido creppe.",
   },
@@ -196,7 +196,7 @@ export const products = [
     imagen: "Abrigo7R",
     imagenExpandida: "Abrigo7",
     title: "Abrigo de paño",
-    precio: "6800",
+    precio: 6800,
     description:
       "Abrigo de paño con solapa y cruce mediando un botón. Bolsillos en el frente , recorte en espalda. Largo modular : arriba de la rodilla.",
   },
@@ -206,7 +206,7 @@ export const products = [
     imagen: "Vestido7R",
     imagenExpandida: "Vestido7",
     title: "Vestido con Broderie",
-    precio: "3300",
+    precio: 3300,
     description:
       "Vestido chemise corto entallado con evase en falda y manga corta . Detalle de broderie en prenda. Tejido lino viscosa.",
   },
@@ -216,7 +216,7 @@ export const products = [
     imagen: "Sweater5R",
     imagenExpandida: "Sweater5",
     title: "Sweater puños ajustados",
-    precio: "3300",
+    precio: 3300,
     description:
       "Cárdigan de punto cuadrado en una mezcla de lana suave y lana de alpaca. Escote en pico y botones en la parte delantera, hombros caídos y mangas largas y voluminosas con puños ajustados. Canalé en escote, puños y bajo.",
   },
@@ -226,7 +226,7 @@ export const products = [
     imagen: "Vestido8R",
     imagenExpandida: "Vestido8",
     title: "Vestido corto verano",
-    precio: "3300",
+    precio: 3300,
     description:
       "Vestido de calce amplio, escote a la base sin mangas. Tejido 100% lino en compromiso con la sustentabilidad.",
   },

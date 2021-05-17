@@ -12,15 +12,12 @@ export const CartContextProvider = ({ children }) => {
   const [quantity, setQuantity] = useState(0);
 
   const addToCart = (item, quantityToAdd) => {
-    if (!cart.includes(item)) {
-      setCart([...cart, item]);
+    const buscarId = cart.find((b) => b.id === item.id);
+    if (!buscarId) {
+      const nextItems = [...cart, item];
+      setCart(nextItems);
       console.log(`Añadimos: ${quantityToAdd} unidades`);
-
-      // return cart.filter((item) => item.id === item);
     } else {
-      alert(
-        "Este elemento ya fue seleccionado anteriormente, no puede volverlo a seleccionar, vaya al carro de compras y modifican su cantidad"
-      );
     }
   };
 
@@ -30,11 +27,37 @@ export const CartContextProvider = ({ children }) => {
   };
 
   useEffect(() => {
+    const storageCart = localStorage.getItem("Items");
+    const formatCart = JSON.parse(storageCart);
+    setCart(formatCart);
+    console.log(storageCart);
+  }, []);
+
+  useEffect(() => {
+    const ItemJSON = JSON.stringify(cart);
+    localStorage.setItem("Items", ItemJSON);
+  }, [cart]);
+
+  const guardoCarrito = (cart) => {};
+
+  const recuperoCarrito = () => {};
+
+  useEffect(() => {
     setQuantity(cart.length);
   }, [cart]);
   console.log(cart);
   return (
-    <CartContext.Provider value={{ cart, quantity, addToCart, removeFromCart }}>
+    <CartContext.Provider
+      value={{
+        cart,
+        quantity,
+        addToCart,
+        removeFromCart,
+        setCart,
+        guardoCarrito,
+        recuperoCarrito,
+      }}
+    >
       {children}
     </CartContext.Provider> // ACA YA LE AGREGAMOS 1 ITEMS Q =1
   );
@@ -42,12 +65,21 @@ export const CartContextProvider = ({ children }) => {
 export default CartContextProvider;
 
 //FIN DE COMPONENTE
+// export const CartContextProvider = ({ children }) => {
+//   const [cart, setCart] = useState([]); // ACA ESTAVACIO
+//   const [quantity, setQuantity] = useState(0);
 
-// export const useCartContext = () => {
-//   return useContext(CartContext); // con esta funcion lo puedo usar en mis children
+//   const addToCart = (item, quantityToAdd) => {
+//     if (!cart.includes(item)) {
+//       const nextItems = [...cart, item];
+//       setCart(nextItems);
+//       console.log(`Añadimos: ${quantityToAdd} unidades`);
+//       productsCount();
 
-//1) creamos el contexto
-//2) creamos las funcion Provider que le pasa sus propiedades a los hijos
-//3) creamos el hook useContext para cuando se va a usar en los hijos
-
-//4) cuando lo voy a usar import  el hook useCartContext
+//       // return cart.filter((item) => item.id === item);
+//     } else {
+//       alert(
+//         "Este elemento ya fue seleccionado anteriormente, no puede volverlo a seleccionar, vaya al carro de compras y modifican su cantidad"
+//       );
+//     }
+//   };

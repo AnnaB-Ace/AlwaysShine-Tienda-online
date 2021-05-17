@@ -8,7 +8,8 @@ const ItemDetail = ({ item }) => {
   const [showButton, setShowButton] = useState(0);
   const { addToCart } = useCartContext();
   const { removeFromCart } = useCartContext();
-
+  const { guardoCarrito } = useCartContext();
+  const { recuperoCarrito } = useCartContext();
   const onAdd = (quantityToAdd) => {
     setShowButton(quantityToAdd);
     addToCart(item, quantityToAdd);

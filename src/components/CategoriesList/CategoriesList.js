@@ -11,7 +11,10 @@ export const CategoriesList = () => {
 
   // console.log(cartC.id);
   const [productscategory, setproductscategory] = useState([]);
-
+  const [categoriaWithDiscount, setcategoriaWithDiscount] = useState([
+    "Sweater",
+    "Vestido",
+  ]);
   useEffect(() => {
     const getItems = async () => {
       const response = await fetch(
@@ -28,30 +31,49 @@ export const CategoriesList = () => {
     getItems();
   }, [categoriaid]);
 
+  const hasDiscount = (categoriaid) =>
+    categoriaWithDiscount.some((category) => category === categoriaid);
   return (
-    <div className="CategoriesList">
-      {productscategory.map((product, id) => {
-        return (
-          <div key={product.id} className="tarjeta " style={{ maxWidth: 200 }}>
-            <div>
-              <Link to={`/item/${product.id}`}>
-                <img
-                  src={require(`../../img/jpg/${product.imagen}.jpg`).default}
-                  alt="coleccion2021"
-                  className="card-img img-fluid"
-                />
-              </Link>
-            </div>
-            <div className="Box">
-              <h5>{product.title}</h5>
+    <div>
+      <>
+        {hasDiscount(categoriaid) && (
+          <p>Toda esta categoria esta con descuento del 30%</p>
+        )}
+      </>
+      <div className="CategoriesList">
+        {productscategory.map((product, id) => {
+          return (
+            <div
+              key={product.id}
+              className="tarjeta "
+              style={{ maxWidth: 200 }}
+            >
+              <div>
+                <Link to={`/item/${product.id}`}>
+                  <img
+                    src={require(`../../img/jpg/${product.imagen}.jpg`).default}
+                    alt="coleccion2021"
+                    className="card-img img-fluid"
+                  />
+                </Link>
+              </div>
+              <div className="Box">
+                <h5>{product.title}</h5>
 
-              <p>
-                <small>${product.precio}</small>
-              </p>
+                {hasDiscount(categoriaid) ? (
+                  <p className="price_withDiscount">
+                    <small>${product.precio}</small>
+                  </p>
+                ) : (
+                  <p className="price">
+                    <small>${product.precio}</small>
+                  </p>
+                )}
+              </div>
             </div>
-          </div>
-        );
-      })}
+          );
+        })}
+      </div>
     </div>
   );
 };
