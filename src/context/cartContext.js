@@ -18,6 +18,7 @@ export const CartContextProvider = ({ children }) => {
       setCart(nextItems);
       console.log(`Añadimos: ${quantityToAdd} unidades`);
     } else {
+      console.log("este item ya fue agregado antes, modifique su cantidad");
     }
   };
 
@@ -38,10 +39,6 @@ export const CartContextProvider = ({ children }) => {
     localStorage.setItem("Items", ItemJSON);
   }, [cart]);
 
-  const guardoCarrito = (cart) => {};
-
-  const recuperoCarrito = () => {};
-
   useEffect(() => {
     setQuantity(cart.length);
   }, [cart]);
@@ -54,8 +51,6 @@ export const CartContextProvider = ({ children }) => {
         addToCart,
         removeFromCart,
         setCart,
-        guardoCarrito,
-        recuperoCarrito,
       }}
     >
       {children}
