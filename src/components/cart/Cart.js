@@ -3,8 +3,8 @@ import { useCartContext } from "../../context/cartContext";
 import "./cart.css";
 
 const Cart = () => {
-  const { cart, removeFromCart } = useCartContext();
-
+  const { cart, removeFromCart, totalunitario } = useCartContext();
+  console.log(totalunitario);
   return (
     <div>
       <h1>Detalle de tu compra</h1>
@@ -23,7 +23,7 @@ const Cart = () => {
                 <p>{carro.title}</p>
                 <p>{carro.precio}</p>
                 <p>{carro.quantity}</p>
-                <p>{`total`}</p>
+                <p>{totalunitario}</p>
                 <button
                   onClick={() => {
                     removeFromCart(carro.id);

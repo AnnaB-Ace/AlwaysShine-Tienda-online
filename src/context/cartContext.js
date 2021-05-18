@@ -10,6 +10,7 @@ export const useCartContext = () => {
 export const CartContextProvider = ({ children }) => {
   const [cart, setCart] = useState([]); // ACA ESTAVACIO
   const [quantity, setQuantity] = useState(0);
+  const [totalunitario, settotalunitario] = useState(0);
 
   const addToCart = (item, quantityToAdd) => {
     console.log(cart);
@@ -25,25 +26,27 @@ export const CartContextProvider = ({ children }) => {
       console.log(nextItems);
       setCart(nextItems);
     }
-    // if (!buscarId) {
-
-    //   console.log(`Añadimos: ${quantityToAdd} unidades`);
-    // } else {
-    //   console.log("este item ya fue agregado antes, modifique su cantidad");
-    //   // si esta agregado sumar cantidad
-    // }
+    // calculatotalunitario(cart.precio, cart.quantity);
+    // const ncantidad = Object.values(cart).reduce(
+    //   (acc, { quantity, precio }) => acc + quantity * precio,
+    //   0
+    // );
+    console.log(ncantidad);
   };
 
   const removeFromCart = (itemId) => {
     const NewCartWhithItemRemove = cart.filter((item) => item.id !== itemId);
     setCart(NewCartWhithItemRemove);
   };
+  // const calculatotalunitario = (precio, quantity) => {
+  //   const totalunitario = totalunitario + precio * quantity;
+  //   settotalunitario(totalunitario);
+  // };
 
   useEffect(() => {
     const storageCart = localStorage.getItem("Items");
     const formatCart = JSON.parse(storageCart);
     setCart(formatCart);
-    // console.log(storageCart);
   }, []);
 
   useEffect(() => {
@@ -63,6 +66,7 @@ export const CartContextProvider = ({ children }) => {
         addToCart,
         removeFromCart,
         setCart,
+        totalunitario,
       }}
     >
       {children}
@@ -70,23 +74,3 @@ export const CartContextProvider = ({ children }) => {
   );
 };
 export default CartContextProvider;
-
-//FIN DE COMPONENTE
-// export const CartContextProvider = ({ children }) => {
-//   const [cart, setCart] = useState([]); // ACA ESTAVACIO
-//   const [quantity, setQuantity] = useState(0);
-
-//   const addToCart = (item, quantityToAdd) => {
-//     if (!cart.includes(item)) {
-//       const nextItems = [...cart, item];
-//       setCart(nextItems);
-//       console.log(`Añadimos: ${quantityToAdd} unidades`);
-//       productsCount();
-
-//       // return cart.filter((item) => item.id === item);
-//     } else {
-//       alert(
-//         "Este elemento ya fue seleccionado anteriormente, no puede volverlo a seleccionar, vaya al carro de compras y modifican su cantidad"
-//       );
-//     }
-//   };
