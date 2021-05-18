@@ -8,7 +8,7 @@ const Cart = () => {
   return (
     <div>
       <div className="detalle">
-        <h1>Aqui va el Cart</h1>
+        <h1>Detalle de tu compra</h1>
         <div className="tabla">
           <p>Producto</p>
           <p>Precio unitario</p>
@@ -21,7 +21,7 @@ const Cart = () => {
             <div className="description" key={carro.id}>
               <p>{carro.title}</p>
               <p>{carro.precio}</p>
-              <p>{"cantidad"}</p>
+              <p>{carro.quantity}</p>
               <p>{"precio"}</p>
               <button
                 onClick={() => {

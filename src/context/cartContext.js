@@ -12,14 +12,17 @@ export const CartContextProvider = ({ children }) => {
   const [quantity, setQuantity] = useState(0);
 
   const addToCart = (item, quantityToAdd) => {
-    const buscarId = cart.find((b) => b.id === item.id);
-    if (!buscarId) {
-      const nextItems = [...cart, item];
-      setCart(nextItems);
-      console.log(`Añadimos: ${quantityToAdd} unidades`);
-    } else {
-      console.log("este item ya fue agregado antes, modifique su cantidad");
-    }
+    console.log(cart);
+    const buscarId = cart.findIndex((b) => b.id === item.id);
+    console.log(buscarId);
+
+    // if (!buscarId) {
+
+    //   console.log(`Añadimos: ${quantityToAdd} unidades`);
+    // } else {
+    //   console.log("este item ya fue agregado antes, modifique su cantidad");
+    //   // si esta agregado sumar cantidad
+    // }
   };
 
   const removeFromCart = (itemId) => {
@@ -31,7 +34,7 @@ export const CartContextProvider = ({ children }) => {
     const storageCart = localStorage.getItem("Items");
     const formatCart = JSON.parse(storageCart);
     setCart(formatCart);
-    console.log(storageCart);
+    // console.log(storageCart);
   }, []);
 
   useEffect(() => {

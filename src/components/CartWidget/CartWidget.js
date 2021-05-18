@@ -14,7 +14,7 @@ export const CartWidget = () => {
           <div>({quantity})</div>
         </Link>
       ) : (
-        <Link className="link" to={"/"}>
+        <Link className="link" to={"/cart"}>
           <img src={bag} className="cart-icon" alt="Cart" />
           <div>({quantity})</div>
         </Link>
