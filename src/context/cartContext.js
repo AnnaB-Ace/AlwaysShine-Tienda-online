@@ -15,7 +15,16 @@ export const CartContextProvider = ({ children }) => {
     console.log(cart);
     const buscarId = cart.findIndex((b) => b.id === item.id);
     console.log(buscarId);
-
+    if (buscarId >= 0) {
+      const copyCart = [...cart];
+      copyCart[buscarId].quantity = copyCart[buscarId].quantity + quantityToAdd;
+      setCart(copyCart);
+    } else {
+      const newItem = { ...item, quantity: quantityToAdd };
+      const nextItems = [...cart, newItem];
+      console.log(nextItems);
+      setCart(nextItems);
+    }
     // if (!buscarId) {
 
     //   console.log(`Añadimos: ${quantityToAdd} unidades`);
