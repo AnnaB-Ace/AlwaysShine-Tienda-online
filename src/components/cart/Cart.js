@@ -3,7 +3,7 @@ import { useCartContext } from "../../context/cartContext";
 import "./cart.css";
 
 const Cart = () => {
-  const { cart, removeFromCart, totalunitario } = useCartContext();
+  const { cart, removeFromCart, totalunitario, sumTotal } = useCartContext();
   console.log(totalunitario);
   return (
     <div>
@@ -23,7 +23,7 @@ const Cart = () => {
                 <p>{carro.title}</p>
                 <p>{carro.precio}</p>
                 <p>{carro.quantity}</p>
-                <p>{totalunitario}</p>
+                <p>{carro.precio * carro.quantity}</p>
                 <button
                   onClick={() => {
                     removeFromCart(carro.id);
@@ -33,6 +33,10 @@ const Cart = () => {
                 </button>
               </div>
             ))}
+            <div>
+              Total de la compra:
+              <p>{sumTotal(cart)}</p>
+            </div>
           </div>
         </div>
       ) : (

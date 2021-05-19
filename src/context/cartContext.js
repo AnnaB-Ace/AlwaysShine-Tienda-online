@@ -8,12 +8,11 @@ export const useCartContext = () => {
 
 // contex Provider
 export const CartContextProvider = ({ children }) => {
-  const [cart, setCart] = useState([]); // ACA ESTAVACIO
+  const [cart, setCart] = useState([]);
   const [quantity, setQuantity] = useState(0);
   const [totalunitario, settotalunitario] = useState(0);
 
   const addToCart = (item, quantityToAdd) => {
-    console.log(cart);
     const buscarId = cart.findIndex((b) => b.id === item.id);
     console.log(buscarId);
     if (buscarId >= 0) {
@@ -26,22 +25,19 @@ export const CartContextProvider = ({ children }) => {
       console.log(nextItems);
       setCart(nextItems);
     }
-    // calculatotalunitario(cart.precio, cart.quantity);
-    // const ncantidad = Object.values(cart).reduce(
-    //   (acc, { quantity, precio }) => acc + quantity * precio,
-    //   0
-    // );
-    console.log(ncantidad);
+  };
+
+  const sumTotal = (cart) => {
+    let total = cart
+      .reduce((t, product) => (t += product.precio * product.quantity), 0)
+      .toFixed(2);
+    return total;
   };
 
   const removeFromCart = (itemId) => {
     const NewCartWhithItemRemove = cart.filter((item) => item.id !== itemId);
     setCart(NewCartWhithItemRemove);
   };
-  // const calculatotalunitario = (precio, quantity) => {
-  //   const totalunitario = totalunitario + precio * quantity;
-  //   settotalunitario(totalunitario);
-  // };
 
   useEffect(() => {
     const storageCart = localStorage.getItem("Items");
@@ -67,6 +63,7 @@ export const CartContextProvider = ({ children }) => {
         removeFromCart,
         setCart,
         totalunitario,
+        sumTotal,
       }}
     >
       {children}
