@@ -18,7 +18,7 @@ export const NavBar = () => {
   return (
     <div>
       <header className="topbar">
-        <p className="logo">MiArgentina</p>
+        <p className="logo">Always Shine</p>
         <nav className="navigation">
           <ul className="links">
             <li className="link">

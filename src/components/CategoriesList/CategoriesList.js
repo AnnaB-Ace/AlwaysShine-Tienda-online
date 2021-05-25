@@ -1,34 +1,28 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import { Link } from "react-router-dom";
+import { getFirestore } from "../../firebase";
 import "./CategoriesList.css";
 // import { useCartContext } from "../../context/cartContext";
 
 export const CategoriesList = () => {
   const { categoriaid } = useParams();
-  // const cartC = useCartContext();
-  // console.log("card=>", cartC);
 
-  // console.log(cartC.id);
   const [productscategory, setproductscategory] = useState([]);
   const [categoriaWithDiscount, setcategoriaWithDiscount] = useState([
     "Sweater",
     "Vestido",
   ]);
+
   useEffect(() => {
-    const getItems = async () => {
-      const response = await fetch(
-        `https://run.mocky.io/v3/0f139187-be0b-4d67-8f4c-dd461bd8519e`
-      );
-      let productsC = await response.json();
+    const db = getFirestore();
+    const items = db.collection("items");
+    const cat = items.where("category", "==", categoriaid);
 
-      let productosFiltrados = productsC.filter(
-        (f) => f.categoria.toLowerCase() === categoriaid.toLowerCase()
-      );
-
-      setproductscategory(productosFiltrados);
-    };
-    getItems();
+    cat.get().then((snapshot) => {
+      const data = snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }));
+      setproductscategory(data);
+    });
   }, [categoriaid]);
 
   const hasDiscount = (categoriaid) =>
@@ -51,7 +45,7 @@ export const CategoriesList = () => {
               <div>
                 <Link to={`/item/${product.id}`}>
                   <img
-                    src={require(`../../img/jpg/${product.imagen}.jpg`).default}
+                    src={require(`../../img/jpg/${product.image}.jpg`).default}
                     alt="coleccion2021"
                     className="card-img img-fluid"
                   />
@@ -62,11 +56,11 @@ export const CategoriesList = () => {
 
                 {hasDiscount(categoriaid) ? (
                   <p className="price_withDiscount">
-                    <small>${product.precio}</small>
+                    <small>${product.price}</small>
                   </p>
                 ) : (
                   <p className="price">
-                    <small>${product.precio}</small>
+                    <small>${product.price}</small>
                   </p>
                 )}
               </div>

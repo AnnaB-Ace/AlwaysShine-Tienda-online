@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 
 export const Items = (props) => {
   const imagenSrc = require(`../../img/jpg/${props.imagen}.jpg`).default;
+  console.log(props);
   return (
     <div className="tarjeta " style={{ maxWidth: 200 }}>
       <div>

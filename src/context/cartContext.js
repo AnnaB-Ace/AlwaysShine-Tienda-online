@@ -14,7 +14,7 @@ export const CartContextProvider = ({ children }) => {
 
   const addToCart = (item, quantityToAdd) => {
     const buscarId = cart.findIndex((b) => b.id === item.id);
-    console.log(buscarId);
+
     if (buscarId >= 0) {
       const copyCart = [...cart];
       copyCart[buscarId].quantity = copyCart[buscarId].quantity + quantityToAdd;
@@ -29,7 +29,7 @@ export const CartContextProvider = ({ children }) => {
 
   const sumTotal = (cart) => {
     let total = cart
-      .reduce((t, product) => (t += product.precio * product.quantity), 0)
+      .reduce((t, product) => (t += product.price * product.quantity), 0)
       .toFixed(2);
     return total;
   };

@@ -22,8 +22,8 @@ const ItemDetail = ({ item }) => {
           <img
             className="img-fluid"
             src={
-              item.imagenExpandida
-                ? require(`../../img/jpg/${item.imagenExpandida}.jpg`).default
+              item.expandedImage
+                ? require(`../../img/jpg/${item.expandedImage}.jpg`).default
                 : ""
             }
             alt="Coleccion2021"
@@ -32,7 +32,7 @@ const ItemDetail = ({ item }) => {
 
         <div className="col-lg-4 col-xs-12 Propiedades">
           <div className="title">{item.title}</div>
-          <div className="title">${item.precio}</div>
+          <div className="title">${item.price}</div>
           <div className="description">{item.description}</div>
           {showButton === 0 ? (
             <ItemCount initial={1} stock={5} onAdd={onAdd} item={item} />
