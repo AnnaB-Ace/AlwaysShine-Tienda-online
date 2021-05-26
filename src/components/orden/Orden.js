@@ -53,7 +53,7 @@ export const Orden = () => {
       return;
     }
 
-    console.log(`Your name is ${name} ${email} and you are ${cel} years old`);
+    console.log(`Your name is ${name} ${email} and you are ${cel} cel`);
   }
 
   useEffect(() => {

@@ -7,7 +7,9 @@
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  background: #333333 !important;
+  /* background: #333333 !important; */
+  background: #8fca00 !important;
+
   color: #fff;
 }
 
@@ -38,4 +40,17 @@
   .topbar {
     height: 80px;
   }
+}
+.envios {
+  color: white;
+  background-color: black;
+  font-family: "Bebas Neue" !important;
+  font-size: 12px;
+  height: 28px;
+  letter-spacing: 0.15rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-top: 10px;
+  justify-content: space-around;
 }

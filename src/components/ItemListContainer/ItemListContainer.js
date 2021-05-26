@@ -58,11 +58,40 @@ export const ItemListContainer = () => {
   //     .catch((error) => console.error("firestore error:", error));
   // }, []);
   // console.log(items);
+  const handleCollection = () => {
+    console.log("onclick presionado");
+  };
   return (
     <>
-      <h1>Productos</h1>
-      <div className="ItemsListContainer">
-        <ItemsList className="list" items={items} />
+      <div className="contenedorImage1">
+        <div className="containerImage image7">
+          <div className="texto">
+            <h1 className="container_des">New Collection 2021</h1>
+
+            <div onClick={handleCollection} className="btn_des">
+              Ver más
+            </div>
+          </div>
+          {/* <img
+          src={require(`../../img/jpg/portada.jpg`).default}
+          alt="coleccion2021"
+          className=" img-fluid"
+        /> */}
+        </div>
+        <div className="containerImage image8">
+          {/* <img
+          src={require(`../../img/jpg/caja.jpg`).default}
+          alt="coleccion2021"
+          className=" img-fluid"
+        /> */}
+        </div>
+      </div>
+      <div>
+        {handleCollection && (
+          <div className="ItemsListContainer">
+            <ItemsList className="list" items={items} />
+          </div>
+        )}
       </div>
     </>
   );

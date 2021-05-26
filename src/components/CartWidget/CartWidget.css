@@ -2,3 +2,9 @@
   width: 28px;
   height: 28px;
 }
+.link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #d0dada;
+}
