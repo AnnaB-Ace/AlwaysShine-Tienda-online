@@ -37,7 +37,6 @@ export const ItemListContainer = () => {
             })
           );
           setItems(data);
-          console.log(data);
         }
       } catch (error) {
         console.error("Firestore error: ", error);

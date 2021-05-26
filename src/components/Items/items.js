@@ -3,8 +3,10 @@ import "./items.css";
 import { Link } from "react-router-dom";
 
 export const Items = (props) => {
-  const imagenSrc = require(`../../img/jpg/${props.imagen}.jpg`).default;
-  console.log(props);
+  const imagenSrc = props.imagen
+    ? require(`../../img/jpg/${props.imagen}.jpg`).default
+    : "";
+
   return (
     <div className="tarjeta " style={{ maxWidth: 200 }}>
       <div>

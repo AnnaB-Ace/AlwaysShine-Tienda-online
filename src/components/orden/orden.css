@@ -1,0 +1,30 @@
+h1,
+p {
+  font-family: Lato;
+}
+
+.input-container {
+  display: flex;
+  margin-bottom: 8px;
+}
+
+.mr-4 {
+  margin-right: 4px;
+}
+
+.div-error {
+  color: white;
+  width: 80%;
+  text-align: center;
+  padding: 1rem;
+  background: red;
+  margin-top: 1rem;
+}
+
+.form {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}

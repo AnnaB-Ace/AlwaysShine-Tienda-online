@@ -2,12 +2,21 @@ import firebase from "firebase";
 
 import React, { useState } from "react";
 import { useCartContext } from "../../context/cartContext";
-import { getFirestore } from "../../firebase";
+import { getFirestore } from "../../firebase/index";
+import { Orden } from "../orden/Orden";
+
 import "./cart.css";
 
 const Cart = () => {
   const { cart, removeFromCart, totalunitario, sumTotal } = useCartContext();
   console.log(cart);
+  const db = getFirestore();
+  const usuario = {
+    nombre: "Fernando",
+    activo: true,
+    fechaNaci: 0,
+  };
+  db.collection("usuarios").add(usuario);
   // const [orders, setorders] = useState(initialState);
 
   // //preguntar
@@ -90,6 +99,7 @@ const Cart = () => {
         )}
       </div>
       <button>Continuar</button>
+      <Orden />
     </>
   );
 };
