@@ -14,16 +14,18 @@
 .Categories li {
   margin: 0 20px 0 0px;
 }
-.Lista {
-  text-decoration: none;
-  color: #d0dada;
-  font-family: "Bebas Neue";
-  font-size: 18px;
-  letter-spacing: 0.15rem;
-}
 
 @media (max-width: 258px) {
   .Categories {
     height: 170px;
   }
+}
+
+/* estilos nuevos */
+.NavLink {
+  text-decoration: none;
+  color: #d0dada;
+  font-family: "Bebas Neue";
+  font-size: 18px;
+  letter-spacing: 0.15rem;
 }

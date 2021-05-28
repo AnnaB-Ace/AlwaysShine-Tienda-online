@@ -7,7 +7,7 @@ export const CartWidget = () => {
   const { quantity } = useCartContext();
   const { cart } = useCartContext();
   return (
-    <div>
+    <div className="contenedorCart">
       {cart.length !== 0 ? (
         <Link className="link" to={"/cart"}>
           <img src={bag} className="cart-icon" alt="Cart" />

@@ -11,11 +11,7 @@ export const Items = (props) => {
     <div className="tarjeta " style={{ maxWidth: 200 }}>
       <div>
         <Link to={`/item/${props.id}`}>
-          <img
-            src={imagenSrc}
-            alt="coleccion2021"
-            className="card-img img-fluid"
-          />
+          <img src={imagenSrc} alt="coleccion2021" className="img-fluid" />
         </Link>
       </div>
       <div className="Box">

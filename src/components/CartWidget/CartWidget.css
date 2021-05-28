@@ -8,3 +8,13 @@
   text-decoration: none;
   color: #d0dada;
 }
+.contenedorCart {
+  margin-top: 15px;
+}
+
+@media (max-width: 768px) {
+  .contenedorCart {
+    position: absolute;
+    right: 15%;
+  }
+}

@@ -6,6 +6,7 @@ import { getFirestore } from "../../firebase/index";
 export const ItemListContainer = () => {
   const [items, setItems] = useState([]);
   const [isEmptyList, setisEmptyList] = useState(false);
+  const [showList, setshowList] = useState(false);
 
   // useEffect(() => {
   //   const db = getFirestore();
@@ -58,8 +59,8 @@ export const ItemListContainer = () => {
   //     .catch((error) => console.error("firestore error:", error));
   // }, []);
   // console.log(items);
-  const handleCollection = () => {
-    console.log("onclick presionado");
+  const handleClick = () => {
+    setshowList(true);
   };
   return (
     <>
@@ -68,7 +69,7 @@ export const ItemListContainer = () => {
           <div className="texto">
             <h1 className="container_des">New Collection 2021</h1>
 
-            <div onClick={handleCollection} className="btn_des">
+            <div onClick={handleClick} className="btn_des">
               Ver más
             </div>
           </div>
@@ -87,7 +88,7 @@ export const ItemListContainer = () => {
         </div>
       </div>
       <div>
-        {handleCollection && (
+        {showList && (
           <div className="ItemsListContainer">
             <ItemsList className="list" items={items} />
           </div>
