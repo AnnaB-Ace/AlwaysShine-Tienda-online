@@ -62,7 +62,9 @@ const Burger = () => {
           }}
         />
       </StyleBurger>
-      <Categories openBurger={openBurger} handleOpen={handleOpen} />
+      {openBurger && (
+        <Categories openBurger={openBurger} handleOpen={handleOpen} />
+      )}
     </>
   );
 };
