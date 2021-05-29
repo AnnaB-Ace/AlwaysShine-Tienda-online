@@ -6,7 +6,7 @@ import "./orden.css";
 
 export const Orden = () => {
   // const id = props.match.params.id;
-  const { cart, sumTotal } = useCartContext();
+  const { cart, sumTotal, clearCart } = useCartContext();
   const [inputValues, setInputValues] = useState({
     name: "",
     email: "",
@@ -47,17 +47,8 @@ export const Orden = () => {
 
   function onSubmit(e) {
     e.preventDefault();
-
-    if ([name, email, cel].includes("")) {
-      setError(true);
-      return;
-    }
-
-    console.log(`Your name is ${name} ${email} and you are ${cel} cel`);
-  }
-
-  useEffect(() => {
     const db = getFirestore();
+    const batch = db.batch();
     const orders = db.collection("orders");
     const newOrder = {
       buyer: inputValues,
@@ -68,11 +59,26 @@ export const Orden = () => {
       .add(newOrder)
       .then(({ id }) => {
         setOrder(id);
+        cart.forEach((item) => {
+          const itemfirebaseRef = db.collection("items").doc(item.id);
+          batch.update(itemfirebaseRef, { stock: item.stock - item.quantity });
+          console.log(item);
+        });
+        batch.commit();
+        setInputValues({
+          name: "",
+          email: "",
+          cel: "",
+        });
+        clearCart();
       })
       .catch((err) => {
         setError(err);
       });
-  }, []);
+    console.log(`Your name is ${name} ${email} and you are ${cel} cel`);
+  }
+
+  const valid = name && email && cel;
 
   return (
     <>
@@ -85,11 +91,10 @@ export const Orden = () => {
               name={div.name}
               value={div.value}
               onChange={handleChange}
-              onBlur={handleBlur}
             />
           </div>
         ))}
-        <button disabled={[name, email, cel].includes("")} type="submit">
+        <button disabled={!valid} type="submit">
           Crear orden
         </button>
       </form>

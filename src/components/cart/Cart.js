@@ -95,7 +95,7 @@ const Cart = () => {
             </div>
           </div>
         ) : (
-          <p>No hay productos en el carrito</p>
+          <p className="SinP">No hay productos en el carrito</p>
         )}
       </div>
       <button>Continuar</button>

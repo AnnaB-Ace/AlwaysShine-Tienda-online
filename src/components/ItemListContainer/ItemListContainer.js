@@ -73,19 +73,8 @@ export const ItemListContainer = () => {
               Ver más
             </div>
           </div>
-          {/* <img
-          src={require(`../../img/jpg/portada.jpg`).default}
-          alt="coleccion2021"
-          className=" img-fluid"
-        /> */}
         </div>
-        <div className="containerImage image8">
-          {/* <img
-          src={require(`../../img/jpg/caja.jpg`).default}
-          alt="coleccion2021"
-          className=" img-fluid"
-        /> */}
-        </div>
+        <div className="containerImage image8"></div>
       </div>
       <div>
         {showList && (

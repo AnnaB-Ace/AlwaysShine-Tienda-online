@@ -6,15 +6,33 @@
 .tabla {
   display: flex;
   justify-content: space-evenly;
-  border: solid gray;
+  border: solid 1px gray;
+  margin: 20px;
+  align-items: center !important;
+  width: 50%;
+  margin-left: 30px;
 }
 .tabladetalle {
+  margin-left: 30px;
   display: flex;
+  width: 50%;
   flex-direction: column;
-  justify-content: space-evenly;
-  border: solid gray;
+  justify-content: space-between;
+  border: solid 1px gray;
 }
+
+h1 {
+  padding-top: 30px;
+  padding-left: 30px;
+}
+
 .description {
   display: flex;
   justify-content: space-evenly;
+
+  align-items: center !important;
+}
+
+.SinP {
+  margin-left: 5%;
 }

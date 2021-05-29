@@ -39,6 +39,10 @@ export const CartContextProvider = ({ children }) => {
     setCart(NewCartWhithItemRemove);
   };
 
+  const clearCart = () => {
+    setCart([]);
+  };
+
   useEffect(() => {
     const storageCart = localStorage.getItem("Items");
     const formatCart = JSON.parse(storageCart);
@@ -64,6 +68,7 @@ export const CartContextProvider = ({ children }) => {
         setCart,
         totalunitario,
         sumTotal,
+        clearCart,
       }}
     >
       {children}
