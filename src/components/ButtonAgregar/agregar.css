@@ -1,0 +1,16 @@
+.agregar {
+  color: #ffffff;
+  fill: #ffffff;
+  border: none;
+  /* border-bottom: 4px solid black; */
+  background: #000000;
+  border-radius: 5px;
+  width: 150px;
+  height: 40px;
+  font-size: 22px;
+  transition: 0.3s all;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}

@@ -34,8 +34,14 @@ const ItemDetail = ({ item }) => {
           <div className="title">{item.title}</div>
           <div className="title">${item.price}</div>
           <div className="description">{item.description}</div>
+          <div className="title">Stock disponible: {item.stock}</div>
           {showButton === 0 ? (
-            <ItemCount initial={1} stock={5} onAdd={onAdd} item={item} />
+            <ItemCount
+              initial={1}
+              stock={item.stock}
+              onAdd={onAdd}
+              item={item}
+            />
           ) : (
             <Link to={"/cart"}>
               <button>Terminar compra</button>

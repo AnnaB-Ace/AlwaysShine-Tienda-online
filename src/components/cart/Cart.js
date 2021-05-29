@@ -1,8 +1,10 @@
 import firebase from "firebase";
 
 import React, { useState } from "react";
+import { NavLink } from "react-router-dom";
 import { useCartContext } from "../../context/cartContext";
 import { getFirestore } from "../../firebase/index";
+
 import { Orden } from "../orden/Orden";
 
 import "./cart.css";
@@ -10,48 +12,6 @@ import "./cart.css";
 const Cart = () => {
   const { cart, removeFromCart, totalunitario, sumTotal } = useCartContext();
   console.log(cart);
-  const db = getFirestore();
-  const usuario = {
-    nombre: "Fernando",
-    activo: true,
-    fechaNaci: 0,
-  };
-  db.collection("usuarios").add(usuario);
-  // const [orders, setorders] = useState(initialState);
-
-  // //preguntar
-  // const handleContinue = async () => {
-  //   const db = getFirestore();
-  //   const batch = db.batch();
-
-  //   cart.forEach((item) => {
-  //     const itemRef = db.collection("items").doc(item.id);
-  //     batch.update(itemRef, { stock: item.stock - item.quantity });
-  //   });
-
-  //   batch.commit().then((r) => console.log(r));
-  // };
-  // //preguntar
-  // const OrdenN = () => {
-  //   const db = getFirestore();
-  //   const orders = db.collection("orders");
-  //   // const item = cart.map({ title, id, price });
-  //   const newOrder = {
-  //     buyer: { user, email, phone },
-  //     items: cart,
-  //     date: firebase.firestore.Timestamp.fromDate(new Date()),
-  //     total: sumTotal,
-  //   };
-  //   orders
-  //     .add(newOrder)
-  //     .then(({ id }) => {
-  //       setOrder(id);
-  //     })
-  //     .catch((err) => {
-  //       setError(err);
-  //     });
-  // };
-  // OrdenN();
 
   return (
     <>
@@ -86,6 +46,7 @@ const Cart = () => {
                   >
                     x
                   </button>
+                  <button>Continuar</button>
                 </div>
               ))}
               <div>
@@ -95,10 +56,16 @@ const Cart = () => {
             </div>
           </div>
         ) : (
-          <p className="SinP">No hay productos en el carrito</p>
+          <>
+            <p className="SinP">No hay productos en el carrito</p>
+          </>
         )}
       </div>
-      <button>Continuar</button>
+      <div className="verProductos">
+        <NavLink className="enlace" to={`/`}>
+          Ver productos
+        </NavLink>
+      </div>
       <Orden />
     </>
   );

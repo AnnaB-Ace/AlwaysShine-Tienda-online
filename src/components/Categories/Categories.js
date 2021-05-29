@@ -16,7 +16,7 @@ const UL = styled.ul`
      
       
       flex-flow: column nowrap;
-      background-color: #0d2538;
+      background-color: #333333;
       position: fixed;
       top 0;
       left: 0;
@@ -34,7 +34,7 @@ const UL = styled.ul`
 
   }
 `;
-export const Categories = ({ openBurger, handleOpen }) => {
+export const Categories = ({ openBurger, handleOpen, handleCategory }) => {
   const [categories, setcategories] = useState([
     "Abrigo",
     "Sweater",
@@ -53,7 +53,11 @@ export const Categories = ({ openBurger, handleOpen }) => {
       {categories.map((category) => {
         return (
           <li key={category}>
-            <NavLink className="NavLink" to={`/category/${category}`}>
+            <NavLink
+              onClick={handleCategory}
+              className="NavLink"
+              to={`/category/${category}`}
+            >
               {category}
             </NavLink>
           </li>

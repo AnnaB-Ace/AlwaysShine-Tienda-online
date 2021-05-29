@@ -35,6 +35,10 @@ const Burger = () => {
     setOpenBurger(!openBurger);
     console.log("click");
   };
+  const handleCategory = () => {
+    setOpenBurger(openBurger);
+    console.log("click");
+  };
   return (
     <>
       <StyleBurger
@@ -63,7 +67,11 @@ const Burger = () => {
         />
       </StyleBurger>
       {openBurger && (
-        <Categories openBurger={openBurger} handleOpen={handleOpen} />
+        <Categories
+          openBurger={openBurger}
+          handleOpen={handleOpen}
+          handleCategory={handleCategory}
+        />
       )}
     </>
   );

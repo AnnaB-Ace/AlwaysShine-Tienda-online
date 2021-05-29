@@ -36,3 +36,35 @@ h1 {
 .SinP {
   margin-left: 5%;
 }
+
+.verProductos {
+  color: #ffffff;
+  fill: #ffffff;
+  border: none;
+  /* border-bottom: 4px solid black; */
+  background: #000000;
+  border-radius: 5px;
+  width: 150px;
+  height: 40px;
+  font-size: 22px;
+  transition: 0.3s all;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  text-decoration: none !important;
+  margin-left: 5%;
+}
+.enlace {
+  text-decoration: none;
+}
+
+.verProductos1 {
+  display: block;
+  font-size: 34px;
+  color: #fff;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  letter-spacing: 0.08em;
+  font-family: "Bebas Neue";
+}

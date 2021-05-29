@@ -82,22 +82,24 @@ export const Orden = () => {
 
   return (
     <>
-      <form onSubmit={onSubmit} className="form">
-        {renderDivs.map((div) => (
-          <div className="input-container" key={div.id}>
-            <label className="mr-4">{div.label}</label>
-            <input
-              type="text"
-              name={div.name}
-              value={div.value}
-              onChange={handleChange}
-            />
-          </div>
-        ))}
-        <button disabled={!valid} type="submit">
-          Crear orden
-        </button>
-      </form>
+      {cart.length !== 0 && (
+        <form onSubmit={onSubmit} className="form">
+          {renderDivs.map((div) => (
+            <div className="input-container" key={div.id}>
+              <label className="mr-4">{div.label}</label>
+              <input
+                type="text"
+                name={div.name}
+                value={div.value}
+                onChange={handleChange}
+              />
+            </div>
+          ))}
+          <button disabled={!valid} type="submit">
+            Crear orden
+          </button>
+        </form>
+      )}
       {error && <div className="div-error">HUBU UN ERROR</div>}
     </>
   );
