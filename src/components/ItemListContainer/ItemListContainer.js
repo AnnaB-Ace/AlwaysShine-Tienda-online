@@ -8,19 +8,6 @@ export const ItemListContainer = () => {
   const [isEmptyList, setisEmptyList] = useState(false);
   const [showList, setshowList] = useState(false);
 
-  // useEffect(() => {
-  //   const db = getFirestore();
-  //   const ItemCollection = db.collection("items");
-  //   ItemCollection.get()
-  //     .then((querySnapshot) => {
-  //       if (querySnapshot.size === 0) {
-  //         setisEmptyList(true);
-  //       }
-  //       setItems(querySnapshot.docs.map((doc) => doc.data()));
-  //     })
-  //     .catch((error) => console.error("firestore error:", error));
-  // }, []);
-
   useEffect(() => {
     const getData = async () => {
       try {
@@ -45,26 +32,13 @@ export const ItemListContainer = () => {
     };
     getData();
   }, []);
-
-  // useEffect(() => {
-  //   const db = getFirestore();
-  //   const ItemCollection = db.collection("items");
-  //   ItemCollection.get() // aca retorna un querS
-  //     .then((querySnapshot) => {
-  //       if (querySnapshot.size === 0) {
-  //         setisEmptyList(true);
-  //       }
-  //       setItems(querySnapshot.docs.map((doc) => doc.data()));
-  //     })
-  //     .catch((error) => console.error("firestore error:", error));
-  // }, []);
-  // console.log(items);
+  
   const handleClick = () => {
     setshowList(true);
   };
   return (
     <>
-      <div className="contenedorImage1">
+      {/* <div className="contenedorImage1">
         <div className="containerImage image7">
           <div className="texto">
             <h1 className="container_des">New Collection 2021</h1>
@@ -75,13 +49,11 @@ export const ItemListContainer = () => {
           </div>
         </div>
         <div className="containerImage image8"></div>
-      </div>
+      </div> */}
       <div>
-        {showList && (
-          <div className="ItemsListContainer">
-            <ItemsList className="list" items={items} />
-          </div>
-        )}
+        <div className="ItemsListContainer">
+          <ItemsList className="list" items={items} />
+        </div>
       </div>
     </>
   );

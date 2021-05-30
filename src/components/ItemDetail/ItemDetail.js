@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { useCartContext } from "../../context/cartContext";
+import MyButton from "../Common/MyButton";
 import { ItemCount } from "../ItemCount/ItemCount";
 import "./ItemDetail.css";
 
 const ItemDetail = ({ item }) => {
   const [showButton, setShowButton] = useState(0);
   const { addToCart } = useCartContext();
-  const { removeFromCart } = useCartContext();
 
   const onAdd = (quantityToAdd) => {
     setShowButton(quantityToAdd);
@@ -30,7 +30,7 @@ const ItemDetail = ({ item }) => {
           />
         </div>
 
-        <div className="col-lg-4 col-xs-12 Propiedades">
+        <div className="col-lg-4 col-xs-12 propiedades">
           <div className="title">{item.title}</div>
           <div className="title">${item.price}</div>
           <div className="description">{item.description}</div>
@@ -43,17 +43,15 @@ const ItemDetail = ({ item }) => {
               item={item}
             />
           ) : (
+            <>
             <Link to={"/cart"}>
-              <button>Terminar compra</button>
+              <MyButton label="Terminar compra" type="primary" />
             </Link>
+            <Link to={"/"}>
+              <MyButton label="Escoger mas productos" type="secondary"/>
+            </Link>
+            </>
           )}
-          <button
-            onClick={() => {
-              removeFromCart(item.id);
-            }}
-          >
-            remover
-          </button>
         </div>
         <div className="col-lg-2 col-xs-12 "></div>
       </div>

@@ -1,0 +1,26 @@
+.backdrop {
+    background-color: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.my-card{
+    width: 400px;
+    padding: 20px;
+}
+
+.modal-title-content {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.modal-title {
+    font-weight: bold;
+}

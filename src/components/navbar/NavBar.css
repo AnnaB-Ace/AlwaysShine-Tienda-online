@@ -1,58 +1,14 @@
-/* .topbar {
-  display: flex;
-  width: 100%;
-  min-width: 30%;
-  height: 100px;
-  flex-direction: row;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
- 
-  background: #8fca00 !important;
-
-  color: #fff;
-} */
-
-/* .links {
-  display: flex;
-  list-style-type: none;
-}
-.link {
-  margin: 0 6px;
-  padding: 12px;
-}
-.link a {
-  text-decoration: none;
-  color: #fff;
-}
-.navigation {
-  margin-right: 50px;
-}
-.logo {
-  margin-left: 50px;
-}
-.login-icon {
-  width: 30px;
-  height: 30px;
-}
-
-@media (max-width: 691px) {
-  .topbar {
-    height: 80px;
-  }
-} */
 .envios {
   color: white;
   background-color: black !important;
   font-family: "Bebas Neue" !important;
   font-size: 12px;
-  height: 28px;
+  height: 36px;
   letter-spacing: 0.15rem;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-around;
-  padding-top: 15px;
+  padding-top: 4px;
+  text-align: center;
 }
-
-/* estilos de mi nueva navbar */

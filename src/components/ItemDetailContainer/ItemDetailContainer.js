@@ -2,14 +2,13 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import { getFirestore } from "../../firebase";
 import ItemDetail from "../ItemDetail/ItemDetail";
-// import { products } from "../ItemListContainer/ItemListContainer";
+import MyLoading from '../Common/MyLoading'
 
 import "./ItemDetailContainer.css";
-function ItemDetailContainer(props) {
-  // const id = props.match.params.id;
+function ItemDetailContainer() {
   const { id } = useParams();
 
-  const [itemI, setItemI] = useState([]);
+  const [itemI, setItemI] = useState(null);
 
   useEffect(() => {
     const db = getFirestore();
@@ -22,7 +21,7 @@ function ItemDetailContainer(props) {
     });
   }, [id]);
 
-  return itemI && <ItemDetail item={itemI} />;
+  return !itemI ? <MyLoading magin="40px"/> : <ItemDetail item={itemI}/>
 }
 
 export default ItemDetailContainer;

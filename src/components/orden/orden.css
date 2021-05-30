@@ -5,11 +5,14 @@ p {
 
 .input-container {
   display: flex;
-  margin-bottom: 8px;
+  width: 100%;
+  margin: 10px 0;
 }
 
 .mr-4 {
-  margin-right: 4px;
+  flex: 1;
+  text-align: right;
+  margin-right: 20px;
 }
 
 .div-error {
@@ -22,7 +25,8 @@ p {
 }
 
 .form {
-  margin-top: 50px;
+  width: 100%;
+  margin-top: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;

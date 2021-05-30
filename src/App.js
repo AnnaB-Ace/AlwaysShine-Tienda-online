@@ -1,6 +1,5 @@
 import "./App.css";
 import { NavBar } from "./components/navbar/NavBar";
-
 import { ItemListContainer } from "./components/ItemListContainer/ItemListContainer";
 import { CategoriesList } from "./components/CategoriesList/CategoriesList";
 import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailContainer";
@@ -12,19 +11,28 @@ import { Switch, Route, BrowserRouter } from "react-router-dom";
 // import { Switch, Route, BrowserRouter } from "react-router-dom";
 // import Cart from "./components/cart/Cart";
 
+const Footer = () => {
+  return <div style={{backgroundColor: 'black', height: '300px'}} >
+    hola
+  </div>
+}
+
 function App() {
   return (
     <BrowserRouter>
       <NavBar />
-      <Switch>
-        <Route exact path="/" component={ItemListContainer} />
-        <Route exact path="/category/:categoriaid" component={CategoriesList} />
-        <Route exact path="/item/:id" component={ItemDetailContainer} />
-        <Route exact path="/cart" component={Cart} />
-        {/* <Route exact path="/login" component={LoginPerson} />
-        <Route path="/" component={DashboardRouter} />
-        <Route exact path="/cart" component={Cart} /> */}
-      </Switch>
+      <div style={{minHeight: "500px"}}>
+        <Switch>
+          <Route exact path="/" component={ItemListContainer} />
+          <Route exact path="/category/:categoriaid" component={CategoriesList} />
+          <Route exact path="/item/:id" component={ItemDetailContainer} />
+          <Route exact path="/cart" component={Cart} />
+          {/* <Route exact path="/login" component={LoginPerson} />
+          <Route path="/" component={DashboardRouter} />
+          <Route exact path="/cart" component={Cart} /> */}
+        </Switch>
+      </div>
+      <Footer/>
     </BrowserRouter>
   );
 }

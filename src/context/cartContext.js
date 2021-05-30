@@ -9,12 +9,9 @@ export const useCartContext = () => {
 // contex Provider
 export const CartContextProvider = ({ children }) => {
   const [cart, setCart] = useState([]);
-  const [quantity, setQuantity] = useState(0);
-  const [totalunitario, settotalunitario] = useState(0);
 
   const addToCart = (item, quantityToAdd) => {
     const buscarId = cart.findIndex((b) => b.id === item.id);
-
     if (buscarId >= 0) {
       const copyCart = [...cart];
       copyCart[buscarId].quantity = copyCart[buscarId].quantity + quantityToAdd;
@@ -46,7 +43,7 @@ export const CartContextProvider = ({ children }) => {
   useEffect(() => {
     const storageCart = localStorage.getItem("Items");
     const formatCart = JSON.parse(storageCart);
-    setCart(formatCart);
+    setCart(formatCart || []);
   }, []);
 
   useEffect(() => {
@@ -54,10 +51,8 @@ export const CartContextProvider = ({ children }) => {
     localStorage.setItem("Items", ItemJSON);
   }, [cart]);
 
-  useEffect(() => {
-    setQuantity(cart.length);
-  }, [cart]);
-  console.log(cart);
+  const quantity = cart.length
+
   return (
     <CartContext.Provider
       value={{
@@ -66,7 +61,6 @@ export const CartContextProvider = ({ children }) => {
         addToCart,
         removeFromCart,
         setCart,
-        totalunitario,
         sumTotal,
         clearCart,
       }}
