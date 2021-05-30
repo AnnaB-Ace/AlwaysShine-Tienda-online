@@ -12,3 +12,11 @@
   padding-top: 4px;
   text-align: center;
 }
+.logo .NavLink {
+  text-decoration: none;
+}
+
+.logo {
+  font-family: "Dancing Script", cursive;
+  font-size: 40px;
+}

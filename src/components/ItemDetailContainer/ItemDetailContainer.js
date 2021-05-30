@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import { getFirestore } from "../../firebase";
 import ItemDetail from "../ItemDetail/ItemDetail";
-import MyLoading from '../Common/MyLoading'
+import MyLoading from "../Common/MyLoading";
 
 import "./ItemDetailContainer.css";
 function ItemDetailContainer() {
@@ -21,7 +21,7 @@ function ItemDetailContainer() {
     });
   }, [id]);
 
-  return !itemI ? <MyLoading magin="40px"/> : <ItemDetail item={itemI}/>
+  return !itemI ? <MyLoading magin="40px" /> : <ItemDetail item={itemI} />;
 }
 
 export default ItemDetailContainer;

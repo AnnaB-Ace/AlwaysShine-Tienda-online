@@ -5,6 +5,7 @@ import { CartWidget } from "../CartWidget/CartWidget";
 import "./NavBar.css";
 
 import Burger from "./Burger";
+import { NavLink } from "react-router-dom";
 
 const Nav = styled.nav`
   width: 100%;
@@ -24,7 +25,10 @@ export const NavBar = () => {
     <>
       <Nav>
         <Burger />
-        <div className="logo">Always Shine</div>
+        <NavLink className="NavLink" to={`/`}>
+          <div className="logo">Always Shine</div>
+        </NavLink>
+
         <CartWidget />
       </Nav>
       {sumTotal(cart) >= 10000 ? (

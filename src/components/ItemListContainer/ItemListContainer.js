@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./ItemListContainer.css";
 import ItemsList from "../ItemsList/ItemsList";
 import { getFirestore } from "../../firebase/index";
+import MyLoading from "../Common/MyLoading";
 
 export const ItemListContainer = () => {
   const [items, setItems] = useState([]);
@@ -14,6 +15,7 @@ export const ItemListContainer = () => {
         const db = getFirestore();
         const itemCollection = db.collection("items");
         const querySnapshot = await itemCollection.get();
+        setisEmptyList(false);
         if (querySnapshot.size === 0) {
           console.log("probando si pasa x aca");
         } else {
@@ -28,14 +30,12 @@ export const ItemListContainer = () => {
         }
       } catch (error) {
         console.error("Firestore error: ", error);
+        setisEmptyList(false);
       }
     };
     getData();
   }, []);
-  
-  const handleClick = () => {
-    setshowList(true);
-  };
+
   return (
     <>
       {/* <div className="contenedorImage1">
@@ -51,6 +51,7 @@ export const ItemListContainer = () => {
         <div className="containerImage image8"></div>
       </div> */}
       <div>
+        {<MyLoading margin="30px" className="my-loading" />}
         <div className="ItemsListContainer">
           <ItemsList className="list" items={items} />
         </div>
