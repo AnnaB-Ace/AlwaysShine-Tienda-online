@@ -6,16 +6,16 @@ import MyLoading from "../Common/MyLoading";
 
 export const ItemListContainer = () => {
   const [items, setItems] = useState([]);
-  const [isEmptyList, setisEmptyList] = useState(false);
-  const [showList, setshowList] = useState(false);
+  const [carga, setcarga] = useState(false);
 
   useEffect(() => {
     const getData = async () => {
       try {
+        setcarga(true);
         const db = getFirestore();
         const itemCollection = db.collection("items");
         const querySnapshot = await itemCollection.get();
-        setisEmptyList(false);
+        setcarga(false);
         if (querySnapshot.size === 0) {
           console.log("probando si pasa x aca");
         } else {
@@ -30,7 +30,7 @@ export const ItemListContainer = () => {
         }
       } catch (error) {
         console.error("Firestore error: ", error);
-        setisEmptyList(false);
+        setcarga(false);
       }
     };
     getData();
@@ -38,23 +38,14 @@ export const ItemListContainer = () => {
 
   return (
     <>
-      {/* <div className="contenedorImage1">
-        <div className="containerImage image7">
-          <div className="texto">
-            <h1 className="container_des">New Collection 2021</h1>
-
-            <div onClick={handleClick} className="btn_des">
-              Ver más
-            </div>
-          </div>
-        </div>
-        <div className="containerImage image8"></div>
-      </div> */}
       <div>
-        {<MyLoading margin="30px" className="my-loading" />}
-        <div className="ItemsListContainer">
-          <ItemsList className="list" items={items} />
-        </div>
+        {carga ? (
+          <MyLoading margin="30px" className="my-loading" />
+        ) : (
+          <div className="ItemsListContainer">
+            <ItemsList className="list" items={items} />
+          </div>
+        )}
       </div>
     </>
   );

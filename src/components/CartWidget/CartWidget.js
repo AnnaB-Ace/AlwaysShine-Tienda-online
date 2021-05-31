@@ -4,36 +4,23 @@ import bag from "../../img/svg/shoppingbag.svg";
 import "./CartWidget.css";
 
 export const CartWidget = () => {
-  const { quantity } = useCartContext();
-  const { cart } = useCartContext();
+  const { cart, cantTotal } = useCartContext();
+
   return (
     <div className="contenedorCart">
       {cart.length !== 0 ? (
         <Link className="link" to={"/cart"}>
           <img src={bag} className="cart-icon" alt="Cart" />
-          <div>({quantity})</div>
+          <div>({cantTotal(cart)})</div>
         </Link>
       ) : (
         <Link className="link" to={"/cart"}>
           <img src={bag} className="cart-icon" alt="Cart" />
-          <div>({quantity})</div>
+          {/* <div>({quantity})</div>
+           */}
+          <div>({cantTotal(cart)})</div>
         </Link>
       )}
     </div>
   );
 };
-// {
-//   cart.length !== 0 ? (
-//     <Link className="link" to={"/cart"}>
-//       <CartWidget />({quantity}) Cart
-//     </Link>
-//   ) : (
-//     <CartWidget
-//       onClick={() => {
-//         return <div>Nohay</div>;
-//       }}
-//     >
-//       {quantity}
-//     </CartWidget>
-//   );
-// }

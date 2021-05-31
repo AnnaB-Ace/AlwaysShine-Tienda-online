@@ -30,6 +30,11 @@ export const CartContextProvider = ({ children }) => {
       .toFixed(2);
     return total;
   };
+  const cantTotal = (cart) => {
+    let totalcantidad = cart.reduce((t, product) => (t += product.quantity), 0);
+
+    return totalcantidad;
+  };
 
   const removeFromCart = (itemId) => {
     const NewCartWhithItemRemove = cart.filter((item) => item.id !== itemId);
@@ -51,17 +56,16 @@ export const CartContextProvider = ({ children }) => {
     localStorage.setItem("Items", ItemJSON);
   }, [cart]);
 
-  const quantity = cart.length
-
   return (
     <CartContext.Provider
       value={{
         cart,
-        quantity,
+
         addToCart,
         removeFromCart,
         setCart,
         sumTotal,
+        cantTotal,
         clearCart,
       }}
     >

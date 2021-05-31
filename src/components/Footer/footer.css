@@ -1,0 +1,17 @@
+.contenedor {
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 100px;
+  color: white;
+}
+.contenedorGeneral {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.titulo {
+  font-family: "Bebas Neue";
+  font-size: 30px;
+}
