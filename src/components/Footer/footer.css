@@ -1,17 +1,44 @@
 .contenedor {
-  background-color: black;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   height: 100px;
-  color: white;
 }
+
 .contenedorGeneral {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.title {
+  font-family: "Bebas Neue";
+  font-size: 30px;
+  color: white;
+  letter-spacing: 0.08rem;
+}
+
+.form {
+  /* background-color: blue; */
+  width: 400px;
+}
+.input {
+  width: 250px !important;
+  background-color: #d0dada;
+}
+.form-group {
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.titulo {
+.create {
   font-family: "Bebas Neue";
-  font-size: 30px;
+  font-size: 20px;
+  color: white;
+  letter-spacing: 0.08rem;
+  display: flex;
+  width: 300px;
+
+  margin-left: 15px;
+  justify-content: space-between;
+  align-items: center;
 }

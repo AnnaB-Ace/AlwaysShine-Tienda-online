@@ -1,23 +1,23 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { useCartContext } from "../../context/cartContext";
 import { getFirestore } from "../../firebase";
 import "./orden.css";
-import MyButton from '../Common/MyButton'
-import MyInput from '../Common/Input'
-import Divider from '../Common/Divider'
-import Modal from '../Common/Modal'
+import MyButton from "../Common/MyButton";
+import MyInput from "../Common/Input";
+import Divider from "../Common/Divider";
+import Modal from "../Common/Modal";
 
-export const Orden = ({history}) => {
+export const Orden = ({ history }) => {
   const { cart, sumTotal, clearCart } = useCartContext();
-  const [visible, setVisiblle] = useState(false)
-  const [loading, setLoading] = useState(false)
+  const [visible, setVisiblle] = useState(false);
+  const [loading, setLoading] = useState(false);
   const [inputValues, setInputValues] = useState({
     name: "",
     email: "",
     email2: "",
     cel: "",
   });
-  const [order, setOrder] = useState('');
+  const [order, setOrder] = useState("");
 
   const [error, setError] = useState(false);
 
@@ -53,12 +53,12 @@ export const Orden = ({history}) => {
   const handleChange = ({ target: { name, value } }) =>
     setInputValues({ ...inputValues, [name]: value });
 
-  const handleBlur = ({ target: { name, value } }) =>
-    setInputValues({ ...inputValues, [name]: value.trim() });
+  // const handleBlur = ({ target: { name, value } }) =>
+  //   setInputValues({ ...inputValues, [name]: value.trim() });
 
   function onSubmit(e) {
     e.preventDefault();
-    setLoading(true)
+    setLoading(true);
     const db = getFirestore();
     const batch = db.batch();
     const orders = db.collection("orders");
@@ -92,21 +92,21 @@ export const Orden = ({history}) => {
   }
 
   const accept = () => {
-    setVisiblle(false)
+    setVisiblle(false);
     clearCart();
-    history.push('/')
-  }
+    history.push("/");
+  };
 
-  const isEmailsValid  = email && email2 && email === email2;
+  const isEmailsValid = email && email2 && email === email2;
   const valid = name && isEmailsValid && cel;
 
   return (
     <>
       {cart.length !== 0 && (
         <form onSubmit={onSubmit} className="form">
-          <p className='cart-sumary-title'>COMPLETA TUS DATOS</p>
-          <Divider/>
-          <br/>
+          <p className="cart-sumary-title">COMPLETA TUS DATOS</p>
+          <Divider />
+          <br />
           {renderDivs.map((div, i) => (
             <div className="input-container" key={i}>
               <label className="mr-4">{div.label}</label>
@@ -118,15 +118,23 @@ export const Orden = ({history}) => {
               />
             </div>
           ))}
-          <br/>
-          <MyButton label="Crear orden" disabled={!valid} buttonType="submit" type="rentangle" loading={loading}/>
+          <br />
+          <MyButton
+            label="Crear orden"
+            disabled={!valid}
+            buttonType="submit"
+            type="rentangle"
+            loading={loading}
+          />
         </form>
       )}
       {error && <div className="div-error">HUBU UN ERROR</div>}
-      <Modal visible={visible} title="Su compra ha sido procesada" onClickButton={accept}>
-        <div className="cart-modal-content">
-          Su numero de orden es {order}.
-        </div>
+      <Modal
+        visible={visible}
+        title="Su compra ha sido procesada"
+        onClickButton={accept}
+      >
+        <div className="cart-modal-content">Su numero de orden es {order}.</div>
       </Modal>
     </>
   );
