@@ -13,8 +13,9 @@ const StyleBurger = styled.div`
     width: 2rem;
     height: 0.25rem;
     border-radius: 10px;
-    transform-origin:1px;
+    transform-origin: 1px;
     transition: all 0.3s linear;
+    cursor: pointer;
     background-color: ${(props) => (props.openBurger ? "#ccc" : "#333")};
   }
 `;
@@ -25,13 +26,10 @@ const Burger = () => {
   const handleOpen = () => setOpenBurger(!openBurger);
 
   const handleCategory = () => setOpenBurger(false);
-  
+
   return (
     <>
-      <StyleBurger
-        {...{openBurger}}
-        onClick={handleOpen}
-      >
+      <StyleBurger {...{ openBurger }} onClick={handleOpen}>
         <div
           style={{
             transform: openBurger ? "rotate(45deg)" : "rotate(0deg)",
@@ -50,7 +48,7 @@ const Burger = () => {
         />
       </StyleBurger>
       {openBurger && (
-        <Categories {...{openBurger, handleOpen, handleCategory}}/>
+        <Categories {...{ openBurger, handleOpen, handleCategory }} />
       )}
     </>
   );

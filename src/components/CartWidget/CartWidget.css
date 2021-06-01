@@ -2,6 +2,7 @@
   width: 28px;
   height: 28px;
 }
+
 .link {
   display: flex;
   align-items: center;
@@ -9,3 +10,6 @@
   color: #d0dada;
 }
 
+.link:hover {
+  color: #d0dada;
+}

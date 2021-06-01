@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { NavLink } from "react-router-dom";
 import "./Categories.css";
 import styled from "styled-components";
@@ -15,23 +15,18 @@ const UL = styled.ul`
   padding-top: 3.5rem;
   transition: transform 0.3s ease-in-out;
   list-style: none;
-  .NavLink{
+  .NavLink {
     color: #fff;
     text-decoration: none;
   }
+
   li {
     padding: 18px 10px;
   }
 `;
 
 export const Categories = ({ openBurger, handleCategory }) => {
-  const [categories, setcategories] = useState([
-    "Abrigo",
-    "Sweater",
-    "Pollera",
-    "Jeans",
-    "Vestido",
-  ]);
+  const categories = ["Abrigo", "Sweater", "Pollera", "Jeans", "Vestido"];
 
   return (
     <UL

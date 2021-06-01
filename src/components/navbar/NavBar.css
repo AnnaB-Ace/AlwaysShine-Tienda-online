@@ -1,8 +1,8 @@
-.envios {
+.total-quantity {
   color: white;
   background-color: black !important;
   font-family: "Bebas Neue" !important;
-  font-size: 12px;
+  font-size: 14px;
   height: 36px;
   letter-spacing: 0.15rem;
   display: flex;
@@ -11,6 +11,8 @@
   justify-content: space-around;
   padding-top: 4px;
   text-align: center;
+  display: flex;
+  flex-wrap: wrap;
 }
 .logo .NavLink {
   text-decoration: none;
@@ -19,4 +21,22 @@
 .logo {
   font-family: "Dancing Script", cursive;
   font-size: 40px;
+}
+.logo:hover {
+  color: black;
+}
+
+@media (max-width: 700px) {
+  .logo {
+    font-size: 30px;
+  }
+}
+@media (max-width: 350px) {
+  .logo {
+    font-size: 20px;
+    text-align: center;
+  }
+  .total-quantity {
+    font-size: 10px;
+  }
 }

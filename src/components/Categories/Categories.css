@@ -1,9 +1,9 @@
-.Categories {
+/* .Categories {
   list-style: none;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  /* background-color: #8fca00; */
+ 
   background-color: #333333;
 
   width: 100%;
@@ -19,7 +19,7 @@
   .Categories {
     height: 170px;
   }
-}
+} */
 
 /* estilos nuevos */
 .NavLink {

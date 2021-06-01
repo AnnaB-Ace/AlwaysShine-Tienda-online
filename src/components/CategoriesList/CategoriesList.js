@@ -10,10 +10,7 @@ export const CategoriesList = () => {
   const { categoriaid } = useParams();
 
   const [productscategory, setproductscategory] = useState([]);
-  const [categoriaWithDiscount, setcategoriaWithDiscount] = useState([
-    "Sweater",
-    "Vestido",
-  ]);
+
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
@@ -29,16 +26,9 @@ export const CategoriesList = () => {
     });
   }, [categoriaid]);
 
-  const hasDiscount = (categoriaid) =>
-    categoriaWithDiscount.some((category) => category === categoriaid);
   return (
     <div>
-      <>
-        {hasDiscount(categoriaid) && (
-          <p>Toda esta categoria esta con descuento del 30%</p>
-        )}
-      </>
-      <div className="CategoriesList">
+      <div className="categories-list">
         {loading ? (
           <MyLoading margin="30px" />
         ) : (
@@ -62,16 +52,6 @@ export const CategoriesList = () => {
                 </div>
                 <div className="Box">
                   <h5>{product.title}</h5>
-
-                  {hasDiscount(categoriaid) ? (
-                    <p className="price_withDiscount">
-                      <small>${product.price}</small>
-                    </p>
-                  ) : (
-                    <p className="price">
-                      <small>${product.price}</small>
-                    </p>
-                  )}
                 </div>
               </div>
             );

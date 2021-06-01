@@ -1,25 +1,41 @@
-.contenedor {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  height: 100px;
-}
-
-.contenedorGeneral {
+.general-container {
+  background-color: black;
+  height: 200px !important;
   display: flex;
   align-items: center;
   justify-content: space-around;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
 .title {
   font-family: "Bebas Neue";
   font-size: 30px;
-  color: white;
+  color: white !important;
   letter-spacing: 0.08rem;
 }
 
+.create-by {
+  font-family: "Bebas Neue";
+  font-size: 20px;
+  color: #8fca00;
+  letter-spacing: 0.08rem;
+  display: flex;
+  flex-direction: row;
+  width: 300px;
+  margin-left: 15px;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.create-by:hover {
+  color: white;
+}
+
 .form {
-  /* background-color: blue; */
   width: 400px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
 .input {
   width: 250px !important;
@@ -29,16 +45,20 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
-.create {
-  font-family: "Bebas Neue";
-  font-size: 20px;
-  color: white;
-  letter-spacing: 0.08rem;
-  display: flex;
-  width: 300px;
+.image-footer {
+  margin-bottom: 5px;
+}
 
-  margin-left: 15px;
-  justify-content: space-between;
-  align-items: center;
+@media (max-width: 350px) {
+  .input {
+    width: 150px !important;
+    background-color: #d0dada;
+  }
+  .title {
+    font-size: 20;
+    text-align: center;
+  }
 }

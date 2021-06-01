@@ -25,9 +25,10 @@ export const CartContextProvider = ({ children }) => {
   };
 
   const sumTotal = (cart) => {
-    let total = cart
-      .reduce((t, product) => (t += product.price * product.quantity), 0)
-      .toFixed(2);
+    let total = cart.reduce(
+      (t, product) => (t += product.price * product.quantity),
+      0
+    );
     return total;
   };
   const cantTotal = (cart) => {
@@ -60,7 +61,6 @@ export const CartContextProvider = ({ children }) => {
     <CartContext.Provider
       value={{
         cart,
-
         addToCart,
         removeFromCart,
         setCart,
@@ -70,7 +70,7 @@ export const CartContextProvider = ({ children }) => {
       }}
     >
       {children}
-    </CartContext.Provider> // ACA YA LE AGREGAMOS 1 ITEMS Q =1
+    </CartContext.Provider>
   );
 };
 export default CartContextProvider;

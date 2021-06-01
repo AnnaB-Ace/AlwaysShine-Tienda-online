@@ -31,14 +31,10 @@ export const NavBar = () => {
 
         <CartWidget />
       </Nav>
-      {sumTotal(cart) >= 10000 ? (
-        <div className="envios">
-          <span>COMPRA INICIAL: ${sumTotal(cart)}</span>
-          <span>ENVIOS A TODO EL PAIS</span>
-        </div>
-      ) : (
-        <div className="envios">ENVIOS GRATIS EN COMPRAS MAYORES A $10.000</div>
-      )}
+      <div className="total-quantity ">
+        <span>COMPRA INICIAL: ${sumTotal(cart)}</span>
+        <span>ENVIOS A TODO EL PAIS</span>
+      </div>
     </>
   );
 };

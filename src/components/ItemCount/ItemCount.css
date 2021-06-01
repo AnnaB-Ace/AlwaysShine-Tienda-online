@@ -1,4 +1,4 @@
-.buttonCont {
+.button-count {
   display: flex;
   width: 120px;
   margin: 10px;
@@ -13,12 +13,4 @@
   width: 25px;
   height: 28px;
   text-align: center;
-}
-.agregar {
-  border-radius: 10px;
-  outline: none;
-}
-.masmenos {
-  border-radius: 5px;
-  outline: none;
 }

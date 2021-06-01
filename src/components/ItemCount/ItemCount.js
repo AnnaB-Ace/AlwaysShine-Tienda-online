@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import MyButton from '../Common/MyButton'
+import MyButton from "../Common/MyButton";
 import "./ItemCount.css";
 
 export const ItemCount = ({ initial, stock, onAdd }) => {
@@ -18,11 +18,15 @@ export const ItemCount = ({ initial, stock, onAdd }) => {
   };
 
   return (
-    <div className="buttonCont">
-      <MyButton label="-" type="small" onClick={decrement}/>
+    <div className="button-count">
+      <MyButton label="-" type="small" onClick={decrement} />
       <p className="count">{count}</p>
-      <MyButton label="+" type="small" onClick={increment}/>
-      <MyButton label="Agregar" onClick={() => onAdd(count)} disabled={!count}/>
+      <MyButton label="+" type="small" onClick={increment} />
+      <MyButton
+        label="Agregar"
+        onClick={() => onAdd(count)}
+        disabled={!count}
+      />
     </div>
   );
 };

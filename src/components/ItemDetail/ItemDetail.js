@@ -18,7 +18,7 @@ const ItemDetail = ({ item }) => {
     <div className="container-fluid">
       <div className="row">
         <div className="col-lg-2 col-xs-12"></div>
-        <div className="col-lg-4 col-xs-12 imagen card">
+        <div className="col-lg-4 col-xs-12 image card">
           <img
             className="img-fluid"
             src={
@@ -30,11 +30,11 @@ const ItemDetail = ({ item }) => {
           />
         </div>
 
-        <div className="col-lg-4 col-xs-12 propiedades">
-          <div className="title">{item.title}</div>
-          <div className="title">${item.price}</div>
-          <div className="description">{item.description}</div>
-          <div className="title">Stock disponible: {item.stock}</div>
+        <div className="col-lg-4 col-xs-12 properties">
+          <div className="properties-title">{item.title}</div>
+          <div className="properties-title">${item.price}</div>
+          <div className="properties-description">{item.description}</div>
+          <div className="properties-title">Stock disponible: {item.stock}</div>
           {showButton === 0 ? (
             <ItemCount
               initial={1}
@@ -44,12 +44,12 @@ const ItemDetail = ({ item }) => {
             />
           ) : (
             <>
-            <Link to={"/cart"}>
-              <MyButton label="Terminar compra" type="primary" />
-            </Link>
-            <Link to={"/"}>
-              <MyButton label="Escoger mas productos" type="secondary"/>
-            </Link>
+              <Link to={"/cart"}>
+                <MyButton label="Terminar compra" type="primary" />
+              </Link>
+              <Link to={"/"}>
+                <MyButton label="Escoger mas productos" type="secondary" />
+              </Link>
             </>
           )}
         </div>
@@ -60,17 +60,3 @@ const ItemDetail = ({ item }) => {
 };
 
 export default ItemDetail;
-
-// productDetail1 ? <ItemDetail productDetail1={productDetail1} /> : null;
-// function ItemDetail({ item }) {
-//  onAdd(quantityToAdd) {
-//  // Hemos recibido un evento del ItemCount
-//  }
-// return <>
-//            …
-//      <ItemCount > // Configura las props de ItemCount
-//      <Button>Termina tu compra</Button> // Oculto hasta que el usuario seleccione la cantidad y clickee en comprar
-
-// </>;
-//  // Utilizar dentro de itemdetail el counter
-// }

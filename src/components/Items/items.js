@@ -8,7 +8,7 @@ export const Items = (props) => {
     : "";
 
   return (
-    <div className="tarjeta " style={{ maxWidth: 200 }}>
+    <div className="tarjeta card" style={{ maxWidth: 200 }}>
       <div>
         <Link to={`/item/${props.id}`}>
           <img src={imagenSrc} alt="coleccion2021" className="img-fluid" />

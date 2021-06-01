@@ -1,10 +1,7 @@
-import React from 'react'
-import "./Input.css"
+import React from "react";
 
-const MyInput = ({type = 'text', name = '', value = '', onChange}) => {
-    return (
-        <input {...{type, name, value, onChange}} />
-    )
-}
+const MyInput = ({ type = "text", name = "", value = "", onChange }) => {
+  return <input {...{ type, name, value, onChange }} />;
+};
 
 export default MyInput;
