@@ -8,19 +8,19 @@ const CartTable = ({ removeFromCart, cart, clearCart }) => {
     <div className="cart-table-content">
       <div className="cart-table-header">
         <div className="cart-table-header-item">
-          <span>Cantidad</span>
+          <span>CANTIDAD</span>
         </div>
         <div className="cart-table-header-item">
-          <span>Producto</span>
+          <span>PRODUCTO</span>
         </div>
         <div className="cart-table-header-item">
-          <span>Precio</span>
+          <span>PRECIO</span>
         </div>
         <div className="cart-table-header-item">
-          <span>Total</span>
+          <span>TOTAL</span>
         </div>
         <div className="cart-table-header-item">
-          <span>Borrar</span>
+          <span>BORRAR</span>
         </div>
       </div>
       <Divider />

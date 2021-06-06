@@ -88,7 +88,6 @@ export const Orden = ({ history }) => {
         setError(err);
         setLoading(false);
       });
-    console.log(`Your name is ${name} ${email} and you are ${cel} cel`);
   }
 
   const accept = () => {

@@ -5,6 +5,8 @@ p {
 
 .input-container {
   display: flex;
+  flex-direction: row;
+  flex-wrap: wrap !important;
   width: 100%;
   margin: 10px 0;
 }
@@ -31,4 +33,32 @@ p {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+.my-input {
+  border: 1px solid gray !important;
+  background-color: white !important;
+}
+
+@media (max-width: 490px) {
+  .mr-4 {
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+  .input-container {
+    font-size: 12px;
+    text-align: center;
+    flex-direction: column;
+    width: 250px;
+    justify-content: center;
+  }
+  .form {
+    width: 260px !important;
+  }
+}
+
+@media (max-width: 295px) {
+  .input-container {
+    width: 200px;
+  }
 }

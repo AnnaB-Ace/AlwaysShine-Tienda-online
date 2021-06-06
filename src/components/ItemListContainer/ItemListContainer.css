@@ -18,3 +18,9 @@
 .my-loading {
   padding-top: 120px;
 }
+
+@media (max-width: 975px) {
+  .ItemsListContainer {
+    padding-bottom: 20px;
+  }
+}

@@ -9,6 +9,13 @@ const StyleBurger = styled.div`
   justify-content: space-around;
   flex-flow: column nowrap;
   z-index: 20;
+  @media (max-width: 350px) {
+     {
+      width: 1rem;
+      height: 1rem;
+    }
+  }
+
   div {
     width: 2rem;
     height: 0.25rem;
@@ -17,6 +24,15 @@ const StyleBurger = styled.div`
     transition: all 0.3s linear;
     cursor: pointer;
     background-color: ${(props) => (props.openBurger ? "#ccc" : "#333")};
+  }
+
+  @media (max-width: 350px) {
+    div {
+      width: 1rem;
+      height: 0.15rem;
+      border-radius: 5px;
+      transform-origin: 0.5px;
+    }
   }
 `;
 

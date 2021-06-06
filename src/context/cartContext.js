@@ -19,7 +19,6 @@ export const CartContextProvider = ({ children }) => {
     } else {
       const newItem = { ...item, quantity: quantityToAdd };
       const nextItems = [...cart, newItem];
-      console.log(nextItems);
       setCart(nextItems);
     }
   };

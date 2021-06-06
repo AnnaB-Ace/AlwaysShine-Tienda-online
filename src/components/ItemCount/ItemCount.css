@@ -3,8 +3,8 @@
   width: 120px;
   margin: 10px;
   height: 30px;
-  align-items: center;
-  justify-content: center;
+  align-items: center !important;
+  justify-content: center !important;
 }
 .count {
   display: block;
@@ -13,4 +13,11 @@
   width: 25px;
   height: 28px;
   text-align: center;
+}
+
+.contador {
+  display: flex;
+  flex-direction: column;
+  justify-content: center !important;
+  align-items: center;
 }

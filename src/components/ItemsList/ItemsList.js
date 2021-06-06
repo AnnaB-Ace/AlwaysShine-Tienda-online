@@ -1,6 +1,4 @@
-// import { ItemDetail } from "../IntemDetail/ItemDetail";
 import { Items } from "../Items/items";
-import "./ItemsList.css";
 
 const ItemsList = (props) => {
   const { items = [] } = props;

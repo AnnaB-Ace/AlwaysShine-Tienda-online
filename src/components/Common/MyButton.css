@@ -1,5 +1,5 @@
 .my-button-primary {
-  min-width: 200px;
+  min-width: 180px !important;
   height: 40px;
   margin: 4px 8px;
   border-radius: 25px;
@@ -19,7 +19,7 @@
 }
 
 .my-button-secondary {
-  min-width: 200px;
+  min-width: 180px !important;
   height: 40px;
   margin: 4px 8px;
   border-radius: 25px;
@@ -49,7 +49,7 @@
   color: #8fca00;
 }
 .my-buttom-small {
-  min-width: 30px;
+  min-width: 30px !important;
   height: 30px;
   margin: 4px 8px;
   border-radius: 10px;
@@ -76,4 +76,15 @@
 .my-button-rentangle:disabled {
   background-color: rgb(224, 224, 224);
   color: gray;
+}
+
+@media (max-width: 490px) {
+  .my-button-rentangle {
+    width: 200px;
+  }
+  .input-container {
+    font-size: 12px;
+    text-align: center;
+    width: 200px;
+  }
 }

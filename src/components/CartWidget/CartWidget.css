@@ -13,3 +13,10 @@
 .link:hover {
   color: #d0dada;
 }
+
+@media (max-width: 350px) {
+  .cart-icon {
+    width: 20px;
+    height: 20px;
+  }
+}

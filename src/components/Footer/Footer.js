@@ -8,11 +8,6 @@ const Footer = () => {
       <InputEmail />
       <div className="create-by">
         <span>Desarrollado por: Anna Acevedo</span>
-        {/* <img
-          className="image-footer"
-          src={require(`../../img/jpg/loggit.jpg`).default}
-          alt="Coleccion2021"
-        /> */}
       </div>
     </div>
   );

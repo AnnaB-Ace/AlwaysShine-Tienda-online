@@ -21,11 +21,11 @@
   letter-spacing: 0.08rem;
   display: flex;
   flex-direction: row;
-  width: 300px;
   margin-left: 15px;
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
+  text-align: center;
 }
 .create-by:hover {
   color: white;
@@ -51,14 +51,50 @@
 .image-footer {
   margin-bottom: 5px;
 }
+@media (max-width: 534px) {
+  .title {
+    font-size: 20px;
+    text-align: center;
+  }
+  .create-by {
+    font-size: 16px;
+    text-align: center;
+  }
 
-@media (max-width: 350px) {
+  .form {
+    text-align: center;
+  }
+  .form-group {
+    flex-direction: column;
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+  .general-container {
+    height: 250px;
+  }
+  .input {
+    margin-bottom: 10px;
+  }
+}
+
+@media (max-width: 374px) {
   .input {
     width: 150px !important;
     background-color: #d0dada;
+    margin-bottom: 8px;
   }
   .title {
-    font-size: 20;
+    font-size: 20px;
     text-align: center;
+  }
+  .create-by {
+    font-size: 12px;
+    text-align: center;
+  }
+}
+
+@media (max-width: 170px) {
+  .input {
+    width: 100px !important;
   }
 }

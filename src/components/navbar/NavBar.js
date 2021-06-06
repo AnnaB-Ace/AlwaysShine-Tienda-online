@@ -15,6 +15,12 @@ const Nav = styled.nav`
   justify-content: space-between;
   background: #8fca00;
   align-items: center;
+
+  @media (max-width: 700px) {
+     {
+      height: 40px;
+    }
+  }
   .logo {
     padding: 15px 0;
   }
@@ -33,7 +39,6 @@ export const NavBar = () => {
       </Nav>
       <div className="total-quantity ">
         <span>COMPRA INICIAL: ${sumTotal(cart)}</span>
-        <span>ENVIOS A TODO EL PAIS</span>
       </div>
     </>
   );

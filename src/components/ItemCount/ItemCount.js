@@ -18,10 +18,12 @@ export const ItemCount = ({ initial, stock, onAdd }) => {
   };
 
   return (
-    <div className="button-count">
-      <MyButton label="-" type="small" onClick={decrement} />
-      <p className="count">{count}</p>
-      <MyButton label="+" type="small" onClick={increment} />
+    <div className="contador">
+      <div className="button-count">
+        <MyButton label="-" type="small" onClick={decrement} />
+        <p className="count">{count}</p>
+        <MyButton label="+" type="small" onClick={increment} />
+      </div>
       <MyButton
         label="Agregar"
         onClick={() => onAdd(count)}

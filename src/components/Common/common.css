@@ -1,0 +1,9 @@
+@media (max-width: 414px) {
+  .inputG {
+    width: 100px;
+  }
+}
+
+.my-input {
+  border: 1px solid gray;
+}

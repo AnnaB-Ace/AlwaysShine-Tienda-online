@@ -92,3 +92,18 @@
   color: gray;
   text-align: center;
 }
+.button {
+  min-width: 100px;
+}
+
+@media (max-width: 383px) {
+  .cart-table-content {
+    font-size: 10px;
+  }
+  .cart-table-row {
+    font-size: 10px;
+  }
+  .cart-sumary-title {
+    font-size: 14px;
+  }
+}

@@ -1,7 +1,7 @@
 .tarjeta {
   border: 2px solid #fff;
   width: 200px;
-  height: 400px;
+  /* height: 400px; */
   margin: 20px;
 }
 .Box {
@@ -9,4 +9,14 @@
   padding: 15px;
   text-align: center;
   height: 100px;
+}
+
+@media (max-width: 300px) {
+  .Box {
+    height: 120px;
+    margin: 0px;
+  }
+  h5 {
+    font-size: 12px;
+  }
 }

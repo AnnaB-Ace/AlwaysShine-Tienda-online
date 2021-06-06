@@ -17,7 +17,7 @@ const ItemDetail = ({ item }) => {
   return (
     <div className="container-fluid">
       <div className="row">
-        <div className="col-lg-2 col-xs-12"></div>
+        <div className="col-lg-2 col-xs-12 padding"></div>
         <div className="col-lg-4 col-xs-12 image card">
           <img
             className="img-fluid"
@@ -48,12 +48,12 @@ const ItemDetail = ({ item }) => {
                 <MyButton label="Terminar compra" type="primary" />
               </Link>
               <Link to={"/"}>
-                <MyButton label="Escoger mas productos" type="secondary" />
+                <MyButton label="Ver más productos" type="secondary" />
               </Link>
             </>
           )}
         </div>
-        <div className="col-lg-2 col-xs-12 "></div>
+        <div className="col-lg-2 col-xs-12 padding "></div>
       </div>
     </div>
   );
