@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 import { getFirestore } from "../../firebase";
 import MyLoading from "../Common/MyLoading";
 import "./CategoriesList.css";
-// import { useCartContext } from "../../context/cartContext";
 
 export const CategoriesList = () => {
   const { categoriaid } = useParams();

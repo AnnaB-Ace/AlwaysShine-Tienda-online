@@ -16,8 +16,6 @@ export const CartWidget = () => {
       ) : (
         <Link className="link" to={"/cart"}>
           <img src={bag} className="cart-icon" alt="Cart" />
-          {/* <div>({quantity})</div>
-           */}
           <div className="cart-cant">({cantTotal(cart)})</div>
         </Link>
       )}
