@@ -51,6 +51,7 @@ export const CategoriesList = () => {
                 </div>
                 <div className="Box">
                   <h5>{product.title}</h5>
+                  <p>{product.price}</p>
                 </div>
               </div>
             );

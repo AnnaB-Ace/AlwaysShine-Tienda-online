@@ -7,3 +7,17 @@
   align-items: center;
   justify-content: center;
 }
+
+.Box {
+  background-color: #d0dada !important;
+  padding: 15px;
+  text-align: center;
+  height: 100px;
+}
+
+@media (max-width: 300px) {
+  .Box {
+    height: 120px;
+    margin: 0px;
+  }
+}
